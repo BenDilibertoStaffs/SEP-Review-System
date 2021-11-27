@@ -9,3 +9,12 @@ services:
     ports:
       - "26257:26257"
       - "8080:8080"
+
+  cockroach_init:
+    image: cockroachdb/cockroach:latest
+    depends_on:
+      - cockroachdb
+    volumes:
+      - ./cockroach/:/home/
+    entrypoint: /bin/bash
+    command: /home/run_setup.sh
