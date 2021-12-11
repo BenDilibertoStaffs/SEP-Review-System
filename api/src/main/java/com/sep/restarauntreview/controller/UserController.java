@@ -13,8 +13,10 @@ import java.util.Collection;
 @Controller
 @AllArgsConstructor
 @RequestMapping("/api/user")
-public record UserController(UserService userService,
-                             UserTransformer userTransformer) {
+public class UserController {
+
+    private UserService userService;
+    private UserTransformer userTransformer;
 
     @GetMapping("/")
     public ResponseEntity<Collection<String>> getAllUsernames() {
@@ -23,8 +25,12 @@ public record UserController(UserService userService,
 
     @PostMapping("/")
     public ResponseEntity<String> saveUser(@RequestBody UserDto userDto) {
-        userService.save(userTransformer.transform(userDto));
-        return ResponseEntity.ok("Yeet");
+        try {
+            userService.save(userTransformer.transform(userDto));
+            return ResponseEntity.ok(String.format("Created user with username %s", userDto.getUsername()));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(String.format("Failed to create user with username %s", userDto.getUsername()));
+        }
     }
 
     @DeleteMapping("/{username}")

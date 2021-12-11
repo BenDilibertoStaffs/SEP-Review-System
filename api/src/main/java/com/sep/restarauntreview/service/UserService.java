@@ -9,7 +9,9 @@ import java.util.Collection;
 
 @Service
 @AllArgsConstructor
-public record UserService(UserRepository userRepository) {
+public class UserService {
+
+    private final UserRepository userRepository;
 
     public Collection<String> getAllUsernames() {
         return userRepository.getAllUsernames();

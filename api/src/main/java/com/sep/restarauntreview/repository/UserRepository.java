@@ -10,14 +10,24 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Objects;
 
 @Repository
 @AllArgsConstructor
-public record UserRepository(NamedParameterJdbcOperations jdbcOperations,
-                             PasswordEncoder passwordEncoder) {
+public class UserRepository {
+
+    private final NamedParameterJdbcOperations jdbcOperations;
+    private final PasswordEncoder passwordEncoder;
 
     public Collection<String> getAllUsernames() {
-        return jdbcOperations.queryForList("SELETE username FROM users", Collections.emptyMap(), String.class);
+        return jdbcOperations.queryForList("SELECT username FROM users", Collections.emptyMap(), String.class);
+    }
+
+    public boolean areCredentialsValidForUser(User user) {
+        SqlParameterSource namedParameters = new MapSqlParameterSource()
+                .addValue("username", user.getUsername());
+        String hashedPassword = jdbcOperations.queryForObject("SELECT password FROM users WHERE username = :username", namedParameters, String.class);
+        return passwordEncoder.matches(user.getPassword(), hashedPassword);
     }
 
     public void save(User user) {
