@@ -12,95 +12,95 @@
   </head>
   <body>
     <div class="container-fluid" aria-label="Restaurant review system application" role="application">
-        <header class="row">
+      <header class="row">
 
-            <!--  Main navigation with some accessibility --> 
-        
-                    <nav
-                      class="
-                        navbar navbar-expand-lg navbar-light
-                        bg-light
-                        d-flex
-                        nav-pills 
-                        w-100
-                      " 
-                    >
-                    
-                    <div class="d-flex flex-row col-lg-2 col-12 justify-content-between " >
-        
-                      <a class="navbar-brand" href="../index.html">Restaurant System</a>
-                      <button
-                        class="navbar-toggler"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbar_menu-actions"
-                      >
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-        
-                    </div>
+        <!--  Main navigation with some accessibility --> 
+    
+                <nav
+                  class="
+                    navbar navbar-expand-lg navbar-light
+                    bg-light
+                    d-flex
+                    nav-pills 
+                    w-100
+                  " 
+                >
                 
-        
-                      <div class="collapse navbar-collapse mt-2 mt-lg-0 w-100 justify-content-center " id="navbar_menu-actions">
-                        
-                        <div class="navbar-nav col-lg-6  w-100 justify-content-center" aria-label="nav bar list" role="navigation">
-                          <div class="nav-item col-lg-2 col-12 ">
-                            <a class="btn active text-light w-100 btn-outline-dark rounded-0" aria-current="true" href="../review.html">Review </a>
-                          </div>
-        
-                        <!-- dropdown menu for account actions--> 
-        
-        
-                          <div class="dropdown col-lg-4 col-12 " id="account-actions-menu" aria-label="account actions dropdowm" role="menu">
-                            <button class="btn btn-outline-dark rounded-0 dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Account actions
-                            </button>
-        
-                            <div class="dropdown-menu w-100" aria-labelledby="account-actions-menu">
-        
-                        
-                          <div class="dropdown-item col-lg-4  col-12">
-                            <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-target="#sign-out_modal">Add business</button>
-                          </div>
-                          
-                          <div class="dropdown-item col-lg-4  col-12">
-                            <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-target="#sign-up_modal">Sign up</button>
-        
-                          </div>
-        
-                        
-                          <div class="dropdown-item col-lg-4  col-12">
-                            <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-target="#Login_modal">Login</button>
-                          </div>   
-                          <div class="dropdown-item col-lg-4  col-12">
-                            <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-target="#sign-out_modal">Sign out</button>
-                        
-                          </div>
-                          </div>
-                        </div>
-                          <div class="nav-item col-lg-2 col-12">
-                            <a class="btn w-100 btn-outline-dark rounded-0"  href="../help.html">Help </a>
-                          </div>
-                        
-                        
-                        </div>
-        
+                <div class="d-flex flex-row col-lg-2 col-12 justify-content-between " >
+    
+                  <a class="navbar-brand" href="../index.html">Restaurant System</a>
+                  <button
+                    class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar_menu-actions"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                </div>
+            
+    
+                  <div class="collapse navbar-collapse mt-2 mt-lg-0 " id="navbar_menu-actions">
+                    
+                    <div class="d-flex col-lg-7  navbar-nav  w-100 justify-content-lg-around" aria-label="nav bar list" role="navigation">
+                      <div class="nav-item col-lg-3 col-12 ">
+                        <a class="btn active text-light w-100 btn-outline-dark rounded-0" aria-current="true" href="../review.html">Review </a>
+                      </div>
+    
+                    <!-- dropdown menu for account actions--> 
+    
+    
+                      <div class="dropdown col-lg-4 col-12 " id="account-actions-menu" aria-label="account actions dropdowm" role="menu">
+                        <button class="btn btn-outline-dark rounded-0 dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account actions
+                        </button>
+    
+                        <div class="dropdown-menu w-100 " aria-labelledby="account-actions-menu">
+    
+                    
+                      <div class="dropdown-item w-100  col-12">
+                        <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-bs-target="#add-business_modal">Add business</button>
+                      </div>
+                      
+                      <div class="dropdown-item w-100  col-12">
+                        <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#sign-up_modal">Sign up</button>
+    
+                      </div>
+    
+                    
+                      <div class="dropdown-item w-100  col-12">
+                        <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-bs-target="#Login_modal">Login</button>
+                      </div>   
+                      <div class="dropdown-item w-100   col-12">
+                        <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#sign-out_modal">Sign out</button>
                     
                       </div>
-                        <!--  Search bar for finding restaurants --> 
-                      <form class="form-inline d-flex flex-row col-lg-4 col-12 mt-lg-0 mt-1 " aria-label="search by name section" role="search">
-                        <label for="main-search" class="d-none">Restaurant search name </label>
-                        <input
-                        id = "main-search"
-                          class="form-control rounded-0 rounded-0 rounded-start " 
-                          type="search"
-                        placeholder="Restaurant Search by name"
-                          aria-label="Enter a restaurant name"
-                        />
-                        <button class="btn btn-dark rounded-0 rounded-end" type="submit">Search</button>
-                        </form>
-                    </nav>
-        
-        </header>
+                      </div>
+                    </div>
+                      <div class="nav-item col-lg-3 col-12">
+                        <a class="btn w-100 btn-outline-dark rounded-0"  href="../help.html">Help </a>
+                      </div>
+                    
+                    
+                    </div>
+    
+                
+                  </div>
+                    <!--  Search bar for finding restaurants --> 
+                  <form class="form-inline d-flex flex-row col-lg-4 col-12 mt-lg-0 mt-1 " aria-label="search by name section" role="search">
+                    <label for="main-search" class="d-none">Restaurant search name </label>
+                    <input
+                    id = "main-search"
+                      class="form-control rounded-0 rounded-0 rounded-start " 
+                      type="search"
+                    placeholder="Restaurant search name"
+                      aria-label="Enter a restaurant name"
+                    />
+                    <button class="btn btn-dark rounded-0 rounded-end" type="submit">Search</button>
+                    </form>
+                </nav>
+    
+    </header>
       <main class = "row d-flex flex-column align-self-center align-items-center bg-secondary p-1 justify-content-center ">
              
         <!--  banner general--> 
@@ -128,6 +128,51 @@
                 
        </main>
     </div>
+
+<!-- Modal template -->
+<div class="modal" id="Modal-name_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+        
+        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
+          </button>
+          <h5 class="modal-title">Title</h5>
+          
+        </div>
+
+     <div class="modal-body col-12 d-flex flex-column ">
+
+      <form class="w-100 d-flex flex-column align-items-center">
+          <label for="attribute-modal_name" class="d-none m-1">Enter attribute into text box</label>
+          <input id="attribute-modal_name"  class="w-100 m-1 rounded-1" name="attribute-modal_name" type="text" placeholder="Attribute"
+           type="input" aria-label="Extended hint" role="" />
+           <button type="submit" role="submit">Submit</button>
+      
+      </form>
+
+
+        <div class="alert alert-success" role="alert">
+          Success: 
+        </div>
+
+        <div class="alert alert-faliure d-done" role="alert">
+          Error:
+        </div>  
+     </div>
+         <div class="modal-footer">
+           Don't have an account? <a href="signup-modal.html">Signup here!</a>
+         </div>
+    
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+ 
+  </div>
     <script src="../js/jscript.js"></script>
 
   </body>
