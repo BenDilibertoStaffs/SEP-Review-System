@@ -200,8 +200,6 @@
     </div>
 
 
-  
-
  <!-- Sign up template -->
  <div class="modal" id="sign-up_modal">
     <div class="modal-dialog">
@@ -214,8 +212,8 @@
           <h5 class="modal-title">Sign up</h5>
           
         </div>
-<div class="modal-body col-12 d-flex flex-column ">
-
+  <div class="modal-body col-12 d-flex flex-column ">
+  
          <form class="w-100 d-flex flex-column align-items-center">
             <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
             <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username-input" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
@@ -225,16 +223,22 @@
         
             <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
             <input id="password-2-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text" placeholder="Confirm password" required minlength="1" maxlength="300" >
-
+  
             <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
-
+  
         </form>
-
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
+          Are you sure you want to create an account?
+          <button type="button" class="btn btn-dark">Yes</button>
+          <button type="button" class="btn btn-dark">No</button>
+  
+  
+       </div>
+        <div class="alert alert-success d-none" role="alert" aria-label="successful creation of account" aria-hidden="true">
          Success: You have created an account
        </div>
-
-       <div class="alert alert-danger" role="alert">
+  
+       <div class="alert alert-dange d-noner" role="alert" aria-label="error alert"  aria-hidden="true">
          Error: the account already exists
        </div>
         </div>
@@ -245,7 +249,7 @@
   
       </div>
     </div>
-
+  
     
   </div>
  <!-- Login template -->
@@ -255,7 +259,7 @@
   
         <div class="modal-header">
         
-        <button type="button" class="btn btn-dark text-light" data-bs-dismiss="modal">Close
+        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
           </button>
           <h5 class="modal-title">Login</h5>
           
@@ -264,17 +268,17 @@
         <div class="modal-body col-12 d-flex flex-column ">
 
         <form class="w-100 d-flex flex-column align-items-center">
-            <label for="username-login" class="d-none m-1">Enter username into text box</label>
+            <label for="username-login " class="d-none m-1">Enter username into text box</label>
             <input id="username-login"  class="w-100 m-1 rounded-1" name="username-input" type="text" placeholder="Username"  required minlength="1" maxlength="300" />
             
-            <label for="password-login" class="d-none m-1">Enter password into text box</label>
+            <label for="password-login " class="d-none m-1">Enter password into text box</label>
             <input id="password-login" class="w-100 m-1 rounded-1" name="password-input"  type="text"  placeholder="Password"  required minlength="1" maxlength="300" />
         
             <button id="submit-login" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
 
 
         </form>
-            <div class="alert alert-danger w-100" role="alert">
+            <div class="alert alert-danger w-100 d-none" role="alert" aria-label="Login information incorrect">
               Error: Login username/password not correct
             </div>
         </div>
@@ -288,9 +292,8 @@
 
     
   </div>
-
-<!-- Add business template -->
-<div class="modal" id="add-business_modal">
+   <!-- Add business template -->
+   <div class="modal" id="add-business_modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -324,21 +327,26 @@
             <button id="submit-create-add-business" class="btn btn-dark rounded-0  w-100 m-1 btn-success" type="submit">Submit</button>
           </form>
 
+          <div class="alert alert-warning d-none" aria-label="warning alert" role="alert" aria-hidden="true">
+             Are you sure you want to add a new business?
+             <button type="button" class="btn btn-dark">Yes</button>
+             <button type="button" class="btn btn-dark">No</button>
 
+
+          </div>
         
 
-          <div class="alert alert-success " aria-label="success alert" role="alert">
+          <div class="alert alert-success d-none" aria-label="success alert" role="alert" aria-hidden="true">
             Success: You have added a new business to review.
           </div>
 
-          <div class="alert alert-faliure " aria-label="error alert" role="alert">
+          <div class="alert alert-faliure d-none" aria-label="error alert" role="alert" aria-hidden="true">
             Error: Business name wasn't added because it already exists.
           </div>
         </div>
       </div>
     </div>
   </div>
-
 
 
   

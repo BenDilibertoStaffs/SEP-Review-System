@@ -201,55 +201,61 @@
       </main>
     </div>
 
-    <!-- Add business template -->
-    <div class="modal" id="add-business_modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn btn-dark text-light"
-              data-bs-dismiss="modal"
+  <!-- Add business template -->
+  <div class="modal" id="add-business_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="btn btn-dark text-light"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <h5 class="modal-title">Add a business</h5>
+        </div>
+
+        <div class="modal-body col-12 d-flex flex-column ">
+
+          <form class="w-100 d-flex flex-column align-items-center">
+            <label for="create-add-business" class="d-none m-1"
+              >Enter restaurant name into text box</label
             >
-              Close
-            </button>
-            <h5 class="modal-title">Add a business</h5>
+            <input
+              id="create-add-business"
+              class="w-100 m-1"
+              name="restaurant-input"   
+              type="text"
+              placeholder="restaurant name"
+              required
+              minlength="1"
+              maxlength="300"
+            />
+
+            <button id="submit-create-add-business" class="btn btn-dark rounded-0  w-100 m-1 btn-success" type="submit">Submit</button>
+          </form>
+
+          <div class="alert alert-warning d-none" aria-label="warning alert" role="alert" aria-hidden="true">
+             Are you sure you want to add a new business?
+             <button type="button" class="btn btn-dark">Yes</button>
+             <button type="button" class="btn btn-dark">No</button>
+
+
+          </div>
+        
+
+          <div class="alert alert-success d-none" aria-label="success alert" role="alert" aria-hidden="true">
+            Success: You have added a new business to review.
           </div>
 
-          <div class="modal-body col-12 d-flex flex-column ">
-
-            <form class="w-100 d-flex flex-column align-items-center">
-              <label for="create-add-business" class="d-none m-1"
-                >Enter restaurant name into text box</label
-              >
-              <input
-                id="create-add-business"
-                class="w-100 m-1"
-                name="restaurant-input"   
-                type="text"
-                placeholder="restaurant name"
-                required
-                minlength="1"
-                maxlength="300"
-              />
-
-              <button id="submit-create-add-business" class="btn btn-dark rounded-0  w-100 m-1 btn-success" type="submit">Submit</button>
-            </form>
-
-
-          
-
-            <div class="alert alert-success " aria-label="success alert" role="alert">
-              Success: You have added a new business to review.
-            </div>
-
-            <div class="alert alert-faliure " aria-label="error alert" role="alert">
-              Error: Business name wasn't added because it already exists.
-            </div>
+          <div class="alert alert-faliure d-none" aria-label="error alert" role="alert" aria-hidden="true">
+            Error: Business name wasn't added because it already exists.
           </div>
         </div>
       </div>
     </div>
+  </div>
     <script src="../js/jscript.js"></script>
   </body>
 </html>
