@@ -165,7 +165,7 @@
 
 
       <!--  Search bar for finding restaurants --> 
-      <form class="form-inline d-flex flex-row  col-10  mt-5" aria-label="search by name section" role="search">
+      <form class="form-inline d-flex flex-row  col-12  mt-5" aria-label="search by name section" role="search">
         <label for="main-search" class="d-none">Restaurant search name </label>
         <input
         id = "main-search"
@@ -174,10 +174,10 @@
         placeholder="Restaurant search name"
           aria-label="Enter a restaurant name"
         />
-        <button class="btn btn-dark rounded-0 rounded-end col-2" type="submit">Search</button>
+        <button class="btn btn-dark rounded-0 rounded-end col-lg-1 col-3" type="submit">Search</button>
         </form>
 
-        <div class="col-10"><a class="btn active text-light col-12 btn-outline-dark rounded-0 mt-5" aria-current="true" href="client/src/review.html">Review </a></div>
+        <div class="col-12"><a class="btn active text-light w-100 btn-outline-dark rounded-0 mt-5" aria-current="true" href="client/src/review.html">Review </a></div>
 
   </main>
     </div>
@@ -298,7 +298,7 @@
             >
             <input
               id="create-add-business"
-              class="w-100 m-1"
+              class="w-100 m-1 rounded-1"
               name="restaurant-input"   
               type="text"
               placeholder="restaurant name"
@@ -307,10 +307,8 @@
               maxlength="300"
             />
 
-            <button id="submit-create-add-business" class="btn btn-dark rounded-0  w-100 m-1 btn-success" type="submit">Submit</button>
+            <button id="submit-create-add-business" class="btn btn-dark rounded-1  w-100 m-1 btn-success" type="submit">Submit</button>
           </form>
-
-
 
           <div class="alert alert-warning d-none" aria-label="warning alert" role="alert" aria-hidden="true">
              Are you sure you want to add a new business?
