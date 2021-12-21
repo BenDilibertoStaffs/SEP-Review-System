@@ -6,9 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>title</title>
-    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="src/css/bootstrap.css" type="text/css" />
+    <script src="src/js/jquery-3.6.0.js"></script>
+    <script src="src/js/bootstrap.bundle.js"></script>
   </head>
   <body>
     <div class="container-fluid" aria-label="Restaurant review system application" role="application">
@@ -44,7 +44,7 @@
                     
                     <div class="d-flex col-lg-7  navbar-nav  w-100 justify-content-lg-around" aria-label="nav bar list" role="navigation">
                       <div class="nav-item col-lg-4 col-12 ">
-                        <a class="btn active text-light w-100 btn-outline-dark rounded-0" aria-current="true" href="../review.html">Review </a>
+                        <a class="btn active text-light w-100 btn-outline-dark rounded-0" aria-current="true" href="review.html">Review </a>
                       </div>
     
                     <!-- dropdown menu for account actions--> 
@@ -78,7 +78,7 @@
                       </div>
                     </div>
                       <div class="nav-item col-lg-4 col-12 mt-1 mt-lg-0">
-                        <a class="btn w-100 btn-outline-dark rounded-0"  href="../help.html">Help </a>
+                        <a class="btn w-100 btn-outline-dark rounded-0"  href="help.html">Help </a>
                       </div>
                     
                     
@@ -202,56 +202,56 @@
 
  <!-- Sign up template -->
  <div class="modal" id="sign-up_modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-      
-      <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
-        </button>
-        <h5 class="modal-title">Sign up</h5>
-        
-      </div>
-<div class="modal-body col-12 d-flex flex-column ">
-
-       <form class="w-100 d-flex flex-column align-items-center">
-          <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
-          <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username-input" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
-          
-          <label for="password-1-sign-up" class="d-none m-1">Enter password into text box</label>
-          <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text"    placeholder="Enter password"  required minlength="1" maxlength="300" >
-      
-          <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
-          <input id="password-2-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text" placeholder="Confirm password" required minlength="1" maxlength="300" >
-
-          <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
-
-      </form>
-      <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
-        Are you sure you want to create an account?
-        <button type="button" class="btn btn-dark">Yes</button>
-        <button type="button" class="btn btn-dark">No</button>
-
-
-     </div>
-      <div class="alert alert-success d-none" role="alert" aria-label="successful creation of account" aria-hidden="true">
-       Success: You have created an account
-     </div>
-
-     <div class="alert alert-danger d-none" role="alert" aria-label="error alert"  aria-hidden="true">
-       Error: the account already exists
-     </div>
-      </div>
-
-      <div class="modal-footer">
-           Have an account? <a href="login-modal.html">Login here!</a>
-      </div>
-
-    </div>
-  </div>
-
+    <div class="modal-dialog">
+      <div class="modal-content">
   
-</div>
+        <div class="modal-header">
+        
+        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
+          </button>
+          <h5 class="modal-title">Sign up</h5>
+          
+        </div>
+  <div class="modal-body col-12 d-flex flex-column ">
+  
+         <form class="w-100 d-flex flex-column align-items-center">
+            <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
+            <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username-input" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
+            
+            <label for="password-1-sign-up" class="d-none m-1">Enter password into text box</label>
+            <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text"    placeholder="Enter password"  required minlength="1" maxlength="300" >
+        
+            <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
+            <input id="password-2-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text" placeholder="Confirm password" required minlength="1" maxlength="300" >
+  
+            <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+  
+        </form>
+        <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
+          Are you sure you want to create an account?
+          <button type="button" class="btn btn-dark">Yes</button>
+          <button type="button" class="btn btn-dark">No</button>
+  
+  
+       </div>
+        <div class="alert alert-success d-none" role="alert" aria-label="successful creation of account" aria-hidden="true">
+         Success: You have created an account
+       </div>
+  
+       <div class="alert alert-dange d-noner" role="alert" aria-label="error alert"  aria-hidden="true">
+         Error: the account already exists
+       </div>
+        </div>
+  
+        <div class="modal-footer">
+             Have an account? <a href="login-modal.html">Login here!</a>
+        </div>
+  
+      </div>
+    </div>
+  
+    
+  </div>
   <!-- Login template -->
   <div class="modal" id="Login_modal">
     <div class="modal-dialog">
@@ -350,7 +350,7 @@
 
 
   
-    <script src="../js/jscript.js"></script>
+  <script src="src/js/jscript.js"></script>
 
 
 
