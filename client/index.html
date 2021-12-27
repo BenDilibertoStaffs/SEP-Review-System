@@ -1,5 +1,3 @@
-<!-- header component with dependencies --> 
-
 <!DOCTYPE html>
 <html lang="en-gb">
   <head>
@@ -11,325 +9,490 @@
     <script src="src/js/bootstrap.bundle.js"></script>
   </head>
   <body class="index">
-    <div class="container-fluid" aria-label="Restaurant review system application" role="application">
-      <header class="row">
-
-        <!--  Main navigation with some accessibility --> 
-    
-                <nav
-                  class="
-                    navbar navbar-expand-lg navbar-light
-                    bg-light
-                    d-flex
-                    nav-pills 
-                    w-100
-                  " 
-                >
-                
-                <div class="d-flex flex-row col-lg-2 col-12 justify-content-between " >
-    
-                  <a class="navbar-brand" href="../index.html">Restaurant System</a>
-                  <button
-                    class="navbar-toggler"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbar_menu-actions"
-                  >
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-    
-                </div>
-            
-    
-                  <div class="collapse navbar-collapse mt-2 mt-1 mt-lg-0" id="navbar_menu-actions">
-                    
-                    <div class="d-flex col-lg-7  navbar-nav  w-100 justify-content-lg-around" aria-label="nav bar list" role="navigation">
-                      <div class="nav-item col-lg-4 col-12 ">
-                        <a class="btn active text-light w-100 btn-outline-dark rounded-0" aria-current="true" href="review.html">Review </a>
-                      </div>
-    
-                    <!-- dropdown menu for account actions--> 
-    
-    
-                      <div class="dropdown col-lg-4 col-12 mt-1 mt-lg-0" id="account-actions-menu" aria-label="account actions drop dropdown" role="menu">
-                        <button class="btn btn-outline-dark rounded-0 dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account actions
-                        </button>
-    
-                        <div class="dropdown-menu w-100" aria-labelledby="account-actions-menu">
-    
-                    
-                      <div class="dropdown-item w-100 col-12">
-                        <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-bs-target="#add-business_modal">Add business</button>
-                      </div>
-                      
-                      <div class="dropdown-item w-100 col-12">
-                        <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#sign-up_modal">Sign up</button>
-    
-                      </div>
-    
-                    
-                      <div class="dropdown-item w-100 col-12">
-                        <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-bs-target="#Login_modal">Login</button>
-                      </div>   
-                      <div class="dropdown-item w-100 col-12">
-                        <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#Login_modal">Sign out</button>
-                    
-                      </div>
-                      </div>
-                    </div>
-                      <div class="nav-item col-lg-4 col-12 mt-1 mt-lg-0">
-                        <a class="btn w-100 btn-outline-dark rounded-0"  href="help.html">Help </a>
-                      </div>
-                    
-                    
-                    </div>
-    
-                
-                  </div>
-                    <!--  Search bar for finding restaurants --> 
-                  <form class="form-inline d-flex flex-row col-lg-4 col-12 mt-lg-0 mt-1 ms-lg-3" aria-label="search by name section" role="search">
-                    <label for="main-search" class="d-none">Restaurant search name </label>
-                    <input
-                    id = "main-search"
-                      class="form-control rounded-0 rounded-0 rounded-start " 
-                      type="search"
-                    placeholder="Restaurant search name"
-                      aria-label="Enter a restaurant name"
-                    />
-                    <button class="btn btn-dark rounded-0 rounded-end" type="submit">Search</button>
-                    </form>
-                </nav>
-    
-    </header>
-    <main
-    class="
-      row
-      d-flex
-      flex-column
-      align-self-center align-items-center
-      bg-secondary
-      p-1
-      justify-content-start
-      min-vh-100
-    "
-  >
-
-    <!--  home general-->
     <div
-      class="d-flex bg-light p-1 col-12 mt-5 flex-column"
-      aria-label="banner"
-      role="banner"
+      class="container-fluid"
+      aria-label="Restaurant review system application"
+      role="application"
     >
-      <header
+      <header class="row">
+        <!--  Main navigation with some accessibility -->
+
+        <nav
+          class="
+            navbar navbar-expand-lg navbar-light
+            bg-light
+            d-flex
+            nav-pills
+            w-100
+          "
+        >
+          <div class="d-flex flex-row col-lg-2 col-12 justify-content-between">
+            <a class="navbar-brand" href="../index.html">Restaurant System</a>
+            <button
+              class="navbar-toggler"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbar_menu-actions"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div
+            class="collapse navbar-collapse mt-2 mt-1 mt-lg-0"
+            id="navbar_menu-actions"
+          >
+            <div
+              class="d-flex col-lg-7 navbar-nav w-100 justify-content-lg-around"
+              aria-label="nav bar list"
+              role="navigation"
+            >
+              <div class="nav-item col-lg-4 col-12">
+                <a
+                  class="btn active text-light w-100 btn-outline-dark rounded-0"
+                  aria-current="true"
+                  href="review.html"
+                  >Review
+                </a>
+              </div>
+
+              <!-- dropdown menu for account actions-->
+
+              <div
+                class="dropdown col-lg-4 col-12 mt-1 mt-lg-0"
+                id="account-actions-menu"
+                aria-label="account actions drop dropdown"
+                role="menu"
+              >
+                <button
+                  class="btn btn-outline-dark rounded-0 dropdown-toggle w-100"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Account actions
+                </button>
+
+                <div
+                  class="dropdown-menu w-100"
+                  aria-labelledby="account-actions-menu"
+                >
+                  <div class="dropdown-item w-100 col-12">
+                    <button
+                      class="btn w-100 btn-outline-dark rounded-0"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#add-business_modal"
+                    >
+                      Add business
+                    </button>
+                  </div>
+
+                  <div class="dropdown-item w-100 col-12">
+                    <button
+                      class="btn w-100 btn-outline-dark rounded-0"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#sign-up_modal"
+                    >
+                      Sign up
+                    </button>
+                  </div>
+
+                  <div class="dropdown-item w-100 col-12">
+                    <button
+                      class="btn w-100 btn-outline-dark rounded-0"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Login_modal"
+                    >
+                      Login
+                    </button>
+                  </div>
+                  <div class="dropdown-item w-100 col-12">
+                    <button
+                      class="btn w-100 btn-outline-dark rounded-0"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Login_modal"
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-item col-lg-4 col-12 mt-1 mt-lg-0">
+                <a class="btn w-100 btn-outline-dark rounded-0" href="help.html"
+                  >Help
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--  Search bar for finding restaurants -->
+          <form
+            class="
+              form-inline
+              d-flex
+              flex-row
+              col-lg-4 col-12
+              mt-lg-0 mt-1
+              ms-lg-3
+            "
+            aria-label="search by name section"
+            role="search"
+          >
+            <label for="main-search" class="d-none"
+              >Restaurant search name
+            </label>
+            <input
+              id="main-search"
+              class="form-control rounded-0 rounded-0 rounded-start"
+              type="search"
+              placeholder="Restaurant search name"
+              aria-label="Enter a restaurant name"
+            />
+            <button class="btn btn-dark rounded-0 rounded-end" type="submit">
+              Search
+            </button>
+          </form>
+        </nav>
+      </header>
+      <main
         class="
+          row
           d-flex
           flex-column
-          col-12
-          p-1
           align-self-center align-items-center
+          bg-secondary
+          p-1
+          justify-content-start
+          min-vh-100
         "
       >
-        <h1
-          class="
-            display-4
-            bg-black
-            text-light
-            p-2
-            text-center
-            col-12
-            fw-bold
-          "
+        <!--  home general-->
+        <div
+          class="d-flex bg-light p-1 col-12 mt-5 flex-column"
+          aria-label="banner"
+          role="banner"
         >
-          Restaurant Review System
-        </h1>
-        <p
-          class="
-            lead
-            display-6
-            bg-black
-            text-light
-            p-1
-            text-center
-            col-10
-          "
+          <header
+            class="
+              d-flex
+              flex-column
+              col-12
+              p-1
+              align-self-center align-items-center
+            "
+          >
+            <h1
+              class="
+                display-4
+                bg-black
+                text-light
+                p-2
+                text-center
+                col-12
+                fw-bold
+              "
+            >
+              Restaurant Review System
+            </h1>
+            <p
+              class="lead display-6 bg-black text-light p-1 text-center col-10"
+            >
+              Create and read reviews
+            </p>
+          </header>
+
+          <h6
+            class="
+              bg-secondary
+              text-light text-center
+              col-10
+              p-1
+              align-self-center
+            "
+          >
+            Welcome user[insert username] or Guest
+          </h6>
+        </div>
+
+        <!--  Search bar for finding restaurants -->
+        <form
+          class="form-inline d-flex flex-row col-lg-8 col-12 mt-5"
+          aria-label="search by name section"
+          role="search"
         >
-          Create and read reviews
-        </p>
-      </header>
-
-      <h6 class="bg-secondary text-light text-center col-10 p-1  align-self-center
-      ">
-        Welcome user[insert username] or Guest
-      </h6>
-    </div>
-
-      <!--  Search bar for finding restaurants --> 
-      <form class="form-inline d-flex flex-row  col-lg-8 col-12  mt-5" aria-label="search by name section" role="search">
-        <label for="main-search" class="d-none">Restaurant search name </label>
-        <input id="main-search" class="form-control rounded-0 rounded-start w-100" type="search" placeholder="Restaurant search name" aria-label="Enter a restaurant name">
-        <button class="btn btn-dark rounded-0 rounded-end col-lg-1 col-3" type="submit">Search</button>
-        </form>
-
-        <div class="col-lg-8 col-12 d-flex justify-content-center"><a class="btn active text-light col-12 btn-outline-dark rounded-0 mt-5" aria-current="true" href="client/src/review.html">Review </a></div>
-
-  </main> 
-    </div>
-
-
-  <!-- Sign up template -->
-  <div class="modal" id="sign-up_modal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <div class="modal-header">
-        
-        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
+          <label for="main-search" class="d-none"
+            >Restaurant search name
+          </label>
+          <input
+            id="main-search"
+            class="form-control rounded-0 rounded-start w-100"
+            type="search"
+            placeholder="Restaurant search name"
+            aria-label="Enter a restaurant name"
+          />
+          <button
+            class="btn btn-dark rounded-0 rounded-end col-lg-1 col-3"
+            type="submit"
+          >
+            Search
           </button>
-          <h5 class="modal-title">Sign up</h5>
-          
-        </div>
-  <div class="modal-body col-12 d-flex flex-column ">
-  
-         <form class="w-100 d-flex flex-column align-items-center">
-            <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
-            <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username-input" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
-            
-            <label for="password-1-sign-up" class="d-none m-1">Enter password into text box</label>
-            <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text"    placeholder="Enter password"  required minlength="1" maxlength="300" >
-        
-            <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
-            <input id="password-2-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text" placeholder="Confirm password" required minlength="1" maxlength="300" >
-  
-            <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
-  
         </form>
-        <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
-          Are you sure you want to create an account?
-          <button type="button" class="btn btn-dark">Yes</button>
-          <button type="button" class="btn btn-dark">No</button>
-  
-  
-       </div>
-        <div class="alert alert-success d-none" role="alert" aria-label="successful creation of account" aria-hidden="true">
-         Success: You have created an account
-       </div>
-  
-       <div class="alert alert-danger d-none" role="alert" aria-label="error alert"  aria-hidden="true">
-         Error: the account already exists
-       </div>
+
+        <div class="col-lg-8 col-12 d-flex justify-content-center">
+          <a
+            class="btn active text-light col-12 btn-outline-dark rounded-0 mt-5"
+            href="client/src/review.html"
+            >Review
+          </a>
         </div>
-  
-        <div class="modal-footer">
-             Have an account? <a href="login-modal.html">Login here!</a>
+      </main>
+    </div>
+
+    <!-- Sign up template -->
+    <div class="modal" id="sign-up_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn btn-dark text-light"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <h5 class="modal-title">Sign up</h5>
+          </div>
+          <div class="modal-body col-12 d-flex flex-column">
+            <form class="w-100 d-flex flex-column align-items-center">
+              <label for="username-sign-up" class="d-none m-1"
+                >Enter username into text box</label
+              >
+              <input
+                id="username-sign-up"
+                class="w-100 m-1 rounded-1"
+                name="username-input"
+                type="text"
+                placeholder="Username"
+                required
+                minlength="1"
+                maxlength="300"
+              />
+
+              <label for="password-1-sign-up" class="d-none m-1"
+                >Enter password into text box</label
+              >
+              <input
+                id="password-1-sign-up"
+                class="w-100 m-1 rounded-1"
+                name="password-input"
+                type="text"
+                placeholder="Enter password"
+                required
+                minlength="1"
+                maxlength="300"
+              />
+
+              <label for="password-2-sign-up" class="d-none m-1"
+                >Confirm by re-entering password into text box</label
+              >
+              <input
+                id="password-2-sign-up"
+                class="w-100 m-1 rounded-1"
+                name="password-input"
+                type="text"
+                placeholder="Confirm password"
+                required
+                minlength="1"
+                maxlength="300"
+              />
+
+              <button
+                id="submit-sign-up"
+                class="btn btn-dark rounded-0 w-100 m-1 btn-success"
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+            <div
+              class="alert alert-warning d-none"
+              aria-label="warning alert"
+              role="alert"
+            >
+              Are you sure you want to create an account?
+              <button type="button" class="btn btn-dark">Yes</button>
+              <button type="button" class="btn btn-dark">No</button>
+            </div>
+            <div
+              class="alert alert-success d-none"
+              role="alert"
+              aria-label="successful creation of account"
+              aria-hidden="true"
+            >
+              Success: You have created an account
+            </div>
+
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              aria-label="error alert"
+              aria-hidden="true"
+            >
+              Error: the account already exists
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            Have an account? <a href="login-modal.html">Login here!</a>
+          </div>
         </div>
-  
       </div>
     </div>
-  
-    
-  </div>
-  <!-- Login template -->
-  <div class="modal" id="Login_modal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <div class="modal-header">
-        
-        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
-          </button>
-          <h5 class="modal-title">Login</h5>
-          
-        </div>
-  
-        <div class="modal-body col-12 d-flex flex-column ">
+    <!-- Login template -->
+    <div class="modal" id="Login_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn btn-dark text-light"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <h5 class="modal-title">Login</h5>
+          </div>
 
-        <form class="w-100 d-flex flex-column align-items-center">
-            <label for="username-login" class="d-none m-1">Enter username into text box</label>
-            <input id="username-login"  class="w-100 m-1 rounded-1" name="username-input" type="text" placeholder="Username"  required minlength="1" maxlength="300" />
-            
-            <label for="password-login" class="d-none m-1">Enter password into text box</label>
-            <input id="password-login" class="w-100 m-1 rounded-1" name="password-input"  type="text"  placeholder="Password"  required minlength="1" maxlength="300" />
-        
-            <button id="submit-login" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+          <div class="modal-body col-12 d-flex flex-column">
+            <form class="w-100 d-flex flex-column align-items-center">
+              <label for="username-login" class="d-none m-1"
+                >Enter username into text box</label
+              >
+              <input
+                id="username-login"
+                class="w-100 m-1 rounded-1"
+                name="username-input"
+                type="text"
+                placeholder="Username"
+                required
+                minlength="1"
+                maxlength="300"
+              />
 
+              <label for="password-login" class="d-none m-1"
+                >Enter password into text box</label
+              >
+              <input
+                id="password-login"
+                class="w-100 m-1 rounded-1"
+                name="password-input"
+                type="text"
+                placeholder="Password"
+                required
+                minlength="1"
+                maxlength="300"
+              />
 
-        </form>
-            <div class="alert alert-danger w-100 d-none" role="alert" aria-label="Login information incorrect">
+              <button
+                id="submit-login"
+                class="btn btn-dark rounded-0 w-100 m-1 btn-success"
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+            <div
+              class="alert alert-danger w-100 d-none"
+              role="alert"
+              aria-label="Login information incorrect"
+            >
               Error: Login username/password not correct
             </div>
+          </div>
+
+          <div class="modal-footer">
+            Don't have an account? <a href="signup-modal.html">Sign up here!</a>
+          </div>
         </div>
-  
-        <div class="modal-footer">
-             Don't have an account? <a href="signup-modal.html">Sign up here!</a>
-        </div>
-  
       </div>
     </div>
-
-    
-  </div>
-   <!-- Add business template -->
-   <div class="modal" id="add-business_modal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button
-            type="button"
-            class="btn btn-dark text-light"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <h5 class="modal-title">Add a business</h5>
-        </div>
-
-        <div class="modal-body col-12 d-flex flex-column ">
-
-          <form class="w-100 d-flex flex-column align-items-center">
-            <label for="create-add-business" class="d-none m-1"
-              >Enter restaurant name into text box</label
+    <!-- Add business template -->
+    <div class="modal" id="add-business_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn btn-dark text-light"
+              data-bs-dismiss="modal"
             >
-            <input
-              id="create-add-business"
-              class="w-100 m-1 rounded-1"
-              name="restaurant-input"   
-              type="text"
-              placeholder="restaurant name"
-              required
-              minlength="1"
-              maxlength="300"
-            />
-
-            <button id="submit-create-add-business" class="btn btn-dark rounded-1  w-100 m-1 btn-success" type="submit">Submit</button>
-          </form>
-
-          <div class="alert alert-warning d-none" aria-label="warning alert" role="alert" aria-hidden="true">
-             Are you sure you want to add a new business?
-             <button type="button" class="btn btn-dark">Yes</button>
-             <button type="button" class="btn btn-dark">No</button>
-
-
-          </div>
-        
-
-          <div class="alert alert-success d-none" aria-label="success alert" role="alert" aria-hidden="true">
-            Success: You have added a new business to review.
+              Close
+            </button>
+            <h5 class="modal-title">Add a business</h5>
           </div>
 
-          <div class="alert alert-faliure d-none" aria-label="error alert" role="alert" aria-hidden="true">
-            Error: Business name wasn't added because it already exists.
+          <div class="modal-body col-12 d-flex flex-column">
+            <form class="w-100 d-flex flex-column align-items-center">
+              <label for="create-add-business" class="d-none m-1"
+                >Enter restaurant name into text box</label
+              >
+              <input
+                id="create-add-business"
+                class="w-100 m-1 rounded-1"
+                name="restaurant-input"
+                type="text"
+                placeholder="restaurant name"
+                required
+                minlength="1"
+                maxlength="300"
+              />
+
+              <button
+                id="submit-create-add-business"
+                class="btn btn-dark rounded-1 w-100 m-1 btn-success"
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+
+            <div
+              class="alert alert-warning d-none"
+              aria-label="warning alert"
+              role="alert"
+              aria-hidden="true"
+            >
+              Are you sure you want to add a new business?
+              <button type="button" class="btn btn-dark">Yes</button>
+              <button type="button" class="btn btn-dark">No</button>
+            </div>
+
+            <div
+              class="alert alert-success d-none"
+              aria-label="success alert"
+              role="alert"
+              aria-hidden="true"
+            >
+              Success: You have added a new business to review.
+            </div>
+
+            <div
+              class="alert alert-faliure d-none"
+              aria-label="error alert"
+              role="alert"
+              aria-hidden="true"
+            >
+              Error: Business name wasn't added because it already exists.
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-  
     <script src="src/js/jscript.js"></script>
 
-
-
   </body>
-
 </html>
