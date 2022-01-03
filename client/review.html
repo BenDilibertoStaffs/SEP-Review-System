@@ -359,8 +359,9 @@
     </div>
 
 
- <!-- Sign up template -->
- <div class="modal" id="sign-up_modal">
+ 
+  <!-- Sign up template -->
+  <div class="modal" id="sign-up_modal">
     <div class="modal-dialog">
       <div class="modal-content">
   
@@ -373,15 +374,15 @@
         </div>
   <div class="modal-body col-12 d-flex flex-column ">
   
-         <form class="w-100 d-flex flex-column align-items-center">
+         <form action="" method="post" class="w-100 d-flex flex-column align-items-center">
             <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
             <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username-input" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
             
             <label for="password-1-sign-up" class="d-none m-1">Enter password into text box</label>
-            <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text"    placeholder="Enter password"  required minlength="1" maxlength="300" >
+            <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="password"    placeholder="Enter password"  required minlength="1" maxlength="300" >
         
             <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
-            <input id="password-2-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="text" placeholder="Confirm password" required minlength="1" maxlength="300" >
+            <input id="password-2-sign-up" class="w-100 m-1 rounded-1" name="password-input" type="password" placeholder="Confirm password" required minlength="1" maxlength="300" >
   
             <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
   
@@ -397,7 +398,7 @@
          Success: You have created an account
        </div>
   
-       <div class="alert alert-dange d-none" role="alert" aria-label="error alert"  aria-hidden="true">
+       <div class="alert alert-danger d-none" role="alert" aria-label="error alert"  aria-hidden="true">
          Error: the account already exists
        </div>
         </div>
