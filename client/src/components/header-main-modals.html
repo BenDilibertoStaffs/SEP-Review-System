@@ -215,19 +215,17 @@
       </div>
 <div class="modal-body col-12 d-flex flex-column ">
 
-       <form action="http://localhost:1234/api/user/" method="POST" class="w-100 d-flex flex-column align-items-center">
-          <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
-          <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
-          
-          <label for="password-1-sign-up" class="d-none m-1">Enter password into text box</label>
-          <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="300" >
-      
-          <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
-          <input  id="password-2-sign-up" class="w-100 m-1 rounded-1"  type="password" placeholder="Confirm password" required minlength="1" maxlength="300" >
+    <form class="w-100 d-flex flex-column align-items-center">
+        <label for="username-inner-sign-up" class="d-none m-1">Enter username into text box</label>
+        <input id="username-inner-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
 
-          <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+        <label for="password-1-inner-sign-up" class="d-none m-1">Enter password into a text box</label>
+        <input id="password-1-inner-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="300" >
 
-      </form>
+
+        <button id="submit-inner-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+
+    </form>
       <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
         Are you sure you want to create an account?
         <button type="button" class="btn btn-dark">Yes</button>
@@ -268,17 +266,17 @@
 
       <div class="modal-body col-12 d-flex flex-column ">
 
-      <form action="http://localhost:1234/api/user/" class="w-100 d-flex flex-column align-items-center">
-          <label for="username-login" class="d-none m-1">Enter username into text box</label>
-          <input id="username-login"  class="w-100 m-1 rounded-1" name="username" type="text" placeholder="Username"  required minlength="1" maxlength="300" />
-          
-          <label for="password-login" class="d-none m-1">Enter password into text box</label>
-          <input id="password-login" class="w-100 m-1 rounded-1" name="password"  type="password"  placeholder="Password"  required minlength="1" maxlength="300" />
-      
-          <button id="submit-login" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+          <form class="w-100 d-flex flex-column align-items-center">
+              <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
+              <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
+
+              <label for="password-1-sign-up" class="d-none m-1">Enter password into a text box</label>
+              <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="300" >
 
 
-      </form>
+              <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+
+          </form>
           <div class="alert alert-danger w-100 d-none" role="alert" aria-label="Login information incorrect">
             Error: Login username/password not correct - try to login again
           </div>

@@ -104,23 +104,14 @@
        <main class = "row d-flex flex-column align-self-center align-items-center bg-secondary p-1 justify-content-center ">
               
          <!--  banner general--> 
-         <div class=" bg-light p-1  col-12 col-sm-12  align-self-center align-items-center" aria-label="banner" role="banner">
-           <header class="d-flex flex-column col-12 p-1 align-self-center align-items-center">
-       
-               <h1 class="display-4 bg-black text-light text-center col-12 p-2">[Insert title]</h1>
-       
-               <h6 class="bg-secondary text-light text-center col-10 p-1" aria-label="Welcome login message" role="Welcome">Welcome user[insert username] or Guest</h6> 
-       
-           </header>    
-       </div>
+         <div class=" bg-light p-1  col-12 col-sm-12  align-self-center align-items-center" aria-label="banner" role="banner"> </div>
        
            <!-- home page banner --> 
            <div class="d-flex bg-light p-1  col-12  align-self-center flex-column" aria-label="banner" role="banner">
                <header class="d-flex flex-column col-12 p-1 align-self-center align-items-center">
                    <h1 class="display-4 bg-black text-light p-2 text-center col-12 fw-bold">Restaurant Review System</h1>
                    <h6 class="bg-secondary text-light text-center col-10 p-1">Welcome user[insert username] or Guest</h6> 
-       
-                </header>
+               </header>
        
                <p class="lead display-6 bg-black text-light p-1 text-center col-10 align-self-center">Create and read reviews </p>
        
@@ -145,19 +136,17 @@
       </div>
 <div class="modal-body col-12 d-flex flex-column ">
 
-       <form action="http://localhost:1234/api/user/" method="POST" class="w-100 d-flex flex-column align-items-center">
-          <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
-          <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
-          
-          <label for="password-1-sign-up" class="d-none m-1">Enter password into text box</label>
-          <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="300" >
-      
-          <label for="password-2-sign-up" class="d-none m-1">Confirm by re-entering password into text box</label>
-          <input  id="password-2-sign-up" class="w-100 m-1 rounded-1"  type="password" placeholder="Confirm password" required minlength="1" maxlength="300" >
+    <form class="w-100 d-flex flex-column align-items-center">
+        <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
+        <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="300" >
 
-          <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+        <label for="password-1-sign-up" class="d-none m-1">Enter password into a text box</label>
+        <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="300" >
 
-      </form>
+
+        <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="submit">Submit</button>
+
+    </form>
       <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
         Are you sure you want to create an account?
         <button type="button" class="btn btn-dark">Yes</button>

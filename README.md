@@ -11,3 +11,6 @@ locally for development purposes. To use this locally, you need to:
 4. Run the command `docker-compose up --build --remove-orphans`
 
 This should start a single node of CockroachDB that can be used for development.
+
+Add the jdk17, start from restaurant-review.main 
+Don't put a forward slash by user - that is automatically appended
