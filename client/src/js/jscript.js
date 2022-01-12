@@ -20,7 +20,7 @@ function close(modal, successMsg){
    )
 }
 
-
+//put the modal back into the original loading state - no error messages and clear fields
 function reset(modal, successMsg){
 $(modal + " .alert-success:first" ).addClass("d-none");
 
@@ -30,8 +30,14 @@ $(modal + " .alert-success:first" ).addClass("d-none");
   $(modal + " .alert-success:first" ).empty();
 
  $(modal + " .alert-success:first" ).text(successMsg);
-}
 
+ $(modal + " input" ).val('');
+
+ }
+
+
+
+//when signup button is pressed it creates an account username and password
  $("#submit-sign-up").click(function (e) {
 
     let passwordFirstEntry = $("#password-1-sign-up").val() + " ";
@@ -61,6 +67,8 @@ $(modal + " .alert-success:first" ).addClass("d-none");
  });
 
 
+
+//generic template for ajax post, get
   function ajaxTemplate(modal,mapping, ajaxMethod, userObject, successMsg) {
     let json = JSON.stringify(userObject);
 
@@ -87,4 +95,6 @@ $(modal + " .alert-success:first" ).addClass("d-none");
       }
     });
   }
+
+
 });
