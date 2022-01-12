@@ -8,6 +8,7 @@ $(function () {
 
 close("#sign-up_modal", "Success: You have created an account" );
 
+close("#login_modal", "" );
 
 function close(modal, successMsg){
 
@@ -65,6 +66,22 @@ $(modal + " .alert-success:first" ).addClass("d-none");
 
    reset("#sign-up_modal", "Success: You have created an account" );
  });
+//when signup button is pressed it creates an account username and password
+ $("#submit-login").click(function (e) {
+
+    let passwordFirstEntry = $("#password-login").val() + " ";
+
+    let usernameEntry = $("#username-login").val() + " ";
+
+
+    let login = {username: usernameEntry, password: passwordFirstEntry};
+
+    reset("#login_modal");
+
+    ajaxTemplate("#login_modal", "auth/", "POST", login, "");
+
+     reset("#login_modal", "" );
+ });
 
 
 
@@ -84,6 +101,8 @@ $(modal + " .alert-success:first" ).addClass("d-none");
       $(modal + " .alert-success" ).removeClass("d-none") ;
 
       $(modal + " .alert-success" ).text(successMsg + ". " + data);
+
+
       },
 
       error: function (data) {
