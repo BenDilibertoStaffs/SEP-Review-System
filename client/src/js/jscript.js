@@ -1,16 +1,22 @@
 $(function () {
   //allow for an application to send
 
-  $("form").click(function (e) {
+
+
+
+function removeFormDefault () {
     e.preventDefault();
     return false;
-  });
+  }
 
-close("#sign-up_modal", "Success: You have created an account" );
+  function allowFormDefault () {
+      return true;
+    }
+close("#sign-up_modal");
 
-close("#login_modal", "" );
+close("#login_modal" );
 
-function close(modal, successMsg){
+function close(modal){
 
   $(modal + " button:first").click(function () {
 
@@ -22,15 +28,11 @@ function close(modal, successMsg){
 }
 
 //put the modal back into the original loading state - no error messages and clear fields
-function reset(modal, successMsg){
+function reset(modal){
 $(modal + " .alert-success:first" ).addClass("d-none");
 
   $(modal + " .alert-danger:first").addClass("d-none");
 
-
-  $(modal + " .alert-success:first" ).empty();
-
- $(modal + " .alert-success:first" ).text(successMsg);
 
  $(modal + " input" ).val('');
 
@@ -41,30 +43,58 @@ $(modal + " .alert-success:first" ).addClass("d-none");
 //when signup button is pressed it creates an account username and password
  $("#submit-sign-up").click(function (e) {
 
-    let passwordFirstEntry = $("#password-1-sign-up").val() + " ";
+    let passwordFirstEntry = $("#password-1-sign-up").val() + "";
 
-    let passwordSecondEntry = $("#password-2-sign-up").val() + " ";
+    let passwordSecondEntry = $("#password-2-sign-up").val() + "";
 
 
     let isSuccessful = false;
 
-    let usernameEntry = $("#username-sign-up").val() + " ";
+    let usernameEntry = $("#username-sign-up").val() + "";
+  if (!usernameEntry){
 
-    if(passwordFirstEntry == passwordSecondEntry){
+
+       reset("#sign-up_modal" );
+
+      $( "#sign-up_modal .alert-danger" ).removeClass("d-none");
+          $( "#sign-up_modal .alert-danger" ).text("Error: username must be at least one character");
+
+   }
+    else if(usernameEntry && (passwordFirstEntry == passwordSecondEntry) && (passwordFirstEntry !== "")){
 
     let sign_up = {username: usernameEntry, password: passwordFirstEntry};
 
-    reset("#sign-up_modal");
 
+    $("#sign-up_modal " + ".form:first").on("click", removeFormDefault) ;
+
+    $( "#sign-up_modal .alert-danger:first" ).addClass("d-none");
     ajaxTemplate("#sign-up_modal", "user/", "POST", sign_up, "Success: You have created an account");
+
+      reset("#sign-up_modal");
+
     }
-    else{
+//if no password is entered
+    else if(passwordFirstEntry === ""){
+       reset("#sign-up_modal");
 
     $( "#sign-up_modal .alert-danger" ).removeClass("d-none");
-    $( "#sign-up_modal .alert-danger" ).text("Error: the passwords don't match");
+    $( "#sign-up_modal .alert-danger" ).text("Error: password must be at least one character");
+
+
+
+
+
+   }
+   else if(passwordFirstEntry != passwordSecondEntry){
+   $( "#sign-up_modal .alert-danger" ).removeClass("d-none");
+       $( "#sign-up_modal .alert-danger" ).text("Error: passwords must match");
    }
 
-   reset("#sign-up_modal", "Success: You have created an account" );
+
+
+
+
+
  });
 //when signup button is pressed it creates an account username and password
  $("#submit-login").click(function (e) {
@@ -76,11 +106,10 @@ $(modal + " .alert-success:first" ).addClass("d-none");
 
     let login = {username: usernameEntry, password: passwordFirstEntry};
 
+
+    ajaxTemplate("#login_modal", "auth/", "POST", login, "","Error: Username and/or password is incorrect");
+
     reset("#login_modal");
-
-    ajaxTemplate("#login_modal", "auth/", "POST", login, "");
-
-     reset("#login_modal", "" );
  });
 
 
@@ -102,13 +131,14 @@ $(modal + " .alert-success:first" ).addClass("d-none");
 
       $(modal + " .alert-success" ).text(successMsg + ". " + data);
 
+      $(modal + " .alert-danger" ).addClass("d-none") ;
 
       },
 
       error: function (data) {
 
       $( modal + " .alert-danger" ).removeClass("d-none") ;
-
+      $(modal + " .alert-danger" ).text(data.message);
 
 
       }

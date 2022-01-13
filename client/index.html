@@ -214,7 +214,6 @@
               align-self-center
             "
           >
-            Welcome user[insert username] or Guest
           </h6>
         </div>
 
@@ -270,13 +269,13 @@
 
   <form class="w-100 d-flex flex-column align-items-center">
     <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
-    <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="20" >
+    <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="20"  title="username must be 20 characters" >
 
     <label for="password-1-sign-up" class="d-none m-1">Enter password into a text box</label>
-    <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="20" >
+    <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="20" title="password must be between 1 and 20 characters" >
 
     <label for="password-2-sign-up" class="d-none m-1">Renter password into a text box</label>
-    <input id="password-2-sign-up" class="w-100 m-1 rounded-1"  type="password" placeholder="Enter password"  required minlength="1" maxlength="20" >
+    <input id="password-2-sign-up" class="w-100 m-1 rounded-1"  type="password" placeholder="Enter password"  required minlength="1" maxlength="20" title="username must be between 1 and 20 characters and match first password entry" >
 
     <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="button">Submit</button>
 
