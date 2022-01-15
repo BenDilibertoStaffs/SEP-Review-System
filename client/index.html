@@ -28,7 +28,7 @@
           "
         >
           <div class="d-flex flex-row col-lg-2 col-12 justify-content-between">
-            <a class="navbar-brand" href="../index.html">Restaurant System</a>
+            <a class="navbar-brand" href="index.html">Restaurant System</a>
             <button
               class="navbar-toggler"
               data-bs-toggle="collapse"
@@ -80,7 +80,7 @@
                 >
                   <div class="dropdown-item w-100 col-12">
                     <button
-                      class="btn w-100 btn-outline-dark rounded-0"
+                      class="btn w-100 btn-outline-dark rounded-0 d-none"
                       type="button"
                       data-bs-toggle="modal"
                       data-bs-target="#add-business_modal"
@@ -212,8 +212,7 @@
               col-10
               p-1
               align-self-center
-            "
-          >
+           ">
           </h6>
         </div>
 
@@ -243,8 +242,8 @@
 
         <div class="col-lg-8 col-12 d-flex justify-content-center">
           <a
-            class="btn active text-light col-12 btn-outline-dark rounded-0 mt-5"
-            href="client/src/review.html"
+            class="btn active d-none text-light col-12 btn-outline-dark rounded-0 mt-5"
+            href="review.html"
             >Review
           </a>
         </div>
@@ -296,8 +295,8 @@
      </div>
       </div>
 
-      <div class="modal-footer">
-           Have an account? <a href="login-modal.html">Login here!</a>
+      <div class="modal-footer" >
+           Have an account? Login instead
       </div>
 
     </div>
@@ -331,13 +330,13 @@
 
 
             </form>
-            <div class="alert alert-danger w-100 d-none" role="alert" aria-label="Login information incorrect">
+            <div class="alert alert-danger w-100 d-none"  role="alert" aria-label="Login information incorrect">
               Error: Login username/password not correct - try to login again
             </div>
           </div>
 
           <div class="modal-footer">
-            Don't have an account? <a href="signup-modal.html">Sign up here!</a>
+            Don't have an account?  Sign up instead!
           </div>
 
         </div>
@@ -379,7 +378,7 @@
               <button
                 id="submit-create-add-business"
                 class="btn btn-dark rounded-1 w-100 m-1 btn-success"
-                type="submit"
+                type="button"
               >
                 Submit
               </button>
@@ -409,7 +408,7 @@
               class="alert alert-faliure d-none"
               aria-label="error alert"
               role="alert"
-              aria-hidden="true"
+              aria-hidden="true",
             >
               Error: Business name wasn't added because it already exists.
             </div>

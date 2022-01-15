@@ -1,583 +1,506 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>title</title>
-    <link rel="stylesheet" href="src/css/bootstrap.css" type="text/css" />
-    <script src="src/js/jquery-3.6.0.js"></script>
-    <script src="src/js/bootstrap.bundle.js"></script>
-  </head>
-  <body class="help">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>title</title>
+  <link rel="stylesheet" href="src/css/bootstrap.css" type="text/css" />
 
-
-<body class="help" onresize="responsiveNav();">
+  <script src="src/js/jquery-3.6.0.js"></script>
+  <script src="src/js/bootstrap.bundle.js"></script>
+</head>
+<body class="help">
+<div
+        class="container-fluid"
+        aria-label="Restaurant review system application"
+        role="application"
+>
 
   <header class="row">
+    <!--  Main navigation with some accessibility -->
 
-    <!--  Main navigation with some accessibility --> 
-
-            <nav
-              class="
-                navbar navbar-expand-lg navbar-light
-                bg-light
-                d-flex
-                nav-pills 
-                w-100
-              " 
-            >
-            
-            <div class="d-flex flex-row col-lg-2 col-12 justify-content-between " >
-
-              <a class="navbar-brand" href="../index.html">Restaurant System</a>
-              <button
+    <nav
+            class="
+            navbar navbar-expand-lg navbar-light
+            bg-light
+            d-flex
+            nav-pills
+            w-100
+          "
+    >
+      <div class="d-flex flex-row col-lg-2 col-12 justify-content-between">
+        <a class="navbar-brand" href="index.html">Restaurant System</a>
+        <button
                 class="navbar-toggler"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbar_menu-actions"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
-            </div>
-        
+      <div
+              class="collapse navbar-collapse mt-2 mt-1 mt-lg-0"
+              id="navbar_menu-actions"
+      >
+        <div
+                class="d-flex col-lg-7 navbar-nav w-100 justify-content-lg-around"
+                aria-label="nav bar list"
+                role="navigation"
+        >
+          <div class="nav-item col-lg-4 col-12">
+            <a
+                    class="btn active text-light w-100 btn-outline-dark rounded-0 d-none"
+                    aria-current="true"
+                    href="review.html"
+            >Review
+            </a>
+          </div>
 
-              <div class="collapse navbar-collapse mt-2 mt-1 mt-lg-0" id="navbar_menu-actions">
-                
-                <div class="d-flex col-lg-7  navbar-nav  w-100 justify-content-lg-around" aria-label="nav bar list" role="navigation">
-                  <div class="nav-item col-lg-4 col-12 ">
-                    <a class="btn active text-light w-100 btn-outline-dark rounded-0" aria-current="true" href="review.html">Review </a>
-                  </div>
+          <!-- dropdown menu for account actions-->
 
-                <!-- dropdown menu for account actions--> 
+          <div
+                  class="dropdown col-lg-4 col-12 mt-1 mt-lg-0"
+                  id="account-actions-menu"
+                  aria-label="account actions drop dropdown"
+                  role="menu"
+          >
+            <button
+                    class="btn btn-outline-dark rounded-0 dropdown-toggle w-100"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+            >
+              Account actions
+            </button>
 
-
-                  <div class="dropdown col-lg-4 col-12 mt-1 mt-lg-0" id="account-actions-menu" aria-label="account actions drop dropdown" role="menu">
-                    <button class="btn btn-outline-dark rounded-0 dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account actions
-                    </button>
-
-                    <div class="dropdown-menu w-100" aria-labelledby="account-actions-menu">
-
-                
-                  <div class="dropdown-item w-100 col-12">
-                    <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-bs-target="#add-business_modal">Add business</button>
-                  </div>
-                  
-                  <div class="dropdown-item w-100 col-12">
-                    <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#sign-up_modal">Sign up</button>
-
-                  </div>
-
-                
-                  <div class="dropdown-item w-100 col-12">
-                    <button class="btn  w-100 btn-outline-dark rounded-0"  type="button" data-bs-toggle="modal" data-bs-target="#Login_modal">Login</button>
-                  </div>   
-                  <div class="dropdown-item w-100 col-12">
-                    <button class="btn w-100 btn-outline-dark rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#Login_modal">Sign out</button>
-                
-                  </div>
-                  </div>
-                </div>
-                  <div class="nav-item col-lg-4 col-12 mt-1 mt-lg-0">
-                    <a class="btn w-100 btn-outline-dark rounded-0"  href="help.html">Help </a>
-                  </div>
-                
-                
-                </div>
-
-            
+            <div
+                    class="dropdown-menu w-100"
+                    aria-labelledby="account-actions-menu"
+            >
+              <div class="dropdown-item w-100 col-12">
+                <button
+                        class="btn w-100 btn-outline-dark rounded-0 d-none"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#add-business_modal"
+                >
+                  Add business
+                </button>
               </div>
-                <!--  Search bar for finding restaurants --> 
-              <form class="form-inline d-flex flex-row col-lg-4 col-12 mt-lg-0 mt-1 ms-lg-3" aria-label="search by name section" role="search">
-                <label for="main-search" class="d-none">Restaurant search name </label>
-                <input
-                id = "main-search"
-                  class="form-control rounded-0 rounded-0 rounded-start " 
-                  type="search"
+
+              <div class="dropdown-item w-100 col-12">
+                <button
+                        class="btn w-100 btn-outline-dark rounded-0"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sign-up_modal"
+                >
+                  Sign up
+                </button>
+              </div>
+
+              <div class="dropdown-item w-100 col-12">
+                <button
+                        class="btn w-100 btn-outline-dark rounded-0"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#Login_modal"
+                >
+                  Login
+                </button>
+              </div>
+              <div class="dropdown-item w-100 col-12">
+                <button
+                        class="btn w-100 btn-outline-dark rounded-0 d-none"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#Login_modal"
+                >
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item col-lg-4 col-12 mt-1 mt-lg-0">
+            <a class="btn w-100 btn-outline-dark rounded-0" href="help.html"
+            >Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--  Search bar for finding restaurants -->
+      <form
+              class="
+              form-inline
+              d-flex
+              flex-row
+              col-lg-4 col-12
+              mt-lg-0 mt-1
+              ms-lg-3
+            "
+              aria-label="search by name section"
+              role="search"
+      >
+        <label for="main-search" class="d-none"
+        >Restaurant search name
+        </label>
+        <input
+                id="main-search"
+                class="form-control rounded-0 rounded-0 rounded-start"
+                type="search"
                 placeholder="Restaurant search name"
-                  aria-label="Enter a restaurant name"
-                />
-                <button class="btn btn-dark rounded-0 rounded-end" type="submit">Search</button>
-                </form>
-            </nav>
+                aria-label="Enter a restaurant name"
+        />
+        <button class="btn btn-dark rounded-0 rounded-end" type="submit">
+          Search
+        </button>
+      </form>
+    </nav>
+  </header>
+  <main class="bg-secondary">
 
-</header>
-
-
-  <main
-  class="
-    row
-    d-flex
-    flex-column
-    align-self-center align-items-center
-    bg-secondary
-    p-1
-    justify-content-start
-    min-vh-100
-  "
->
-  <!--  banner general-->
-  <div
-    class="
-      bg-light
-      p-1
-      col-12 col-sm-12
-      align-self-center align-items-center
-      mt-5
-    "
-    aria-label="banner"
-    role="banner"
-  >
-    <header
-      class="
-        d-flex
-        flex-column
-        col-12
+    <div
+            class="
+        bg-grey
         p-1
+        col-12 col-sm-12
         align-self-center align-items-center
+        pt-5
       "
+            aria-label="banner"
+            role="banner"
     >
-      <h1 class="display-4 bg-black text-light text-center col-12 p-2">
-        [Insert title]
-      </h1>
-
-      <h6
-        class="bg-secondary text-light text-center col-10 p-1"
-        aria-label="Welcome login message"
-      >
-        Welcome user[insert username] or Guest
-      </h6>
-    </header>
-  </div>
-
-  <!--  home general-->
-  <div
-    class="d-flex bg-light p-1 col-12 mt-5 flex-column"
-    aria-label="banner"
-    role="banner"
-  >
-    <header
-      class="
-        d-flex
-        flex-column
-        col-12
-        p-1
-        align-self-center align-items-center
-      "
-    >
-      <h1
-        class="
-          display-4
-          bg-black
-          text-light
-          p-2
-          text-center
+      <header
+              class="
+          d-flex
+          bg-light
+          flex-column
           col-12
-          fw-bold
-        "
-      >
-        Restaurant Review System
-      </h1>
-      <p
-        class="
-          lead
-          display-6
-          bg-black
-          text-light
           p-1
-          text-center
-          col-10
+          align-self-center align-items-center
+
         "
       >
-        Create and read reviews
-      </p>
-    </header>
+        <h2 class="display-4 bg-black text-light text-center col-12 p-3">
+          The User Documentation
+        </h2>
 
-    <h6 class="bg-secondary text-light text-center col-10 p-1  align-self-center
-    ">
-      Welcome user[insert username] or Guest
-    </h6>
-  </div>
-
-
-
-
-
-    <section class="section__banner">
+        <h6
+                class="bg-secondary text-light text-center col-10 p-1"
+                aria-label="Welcome login message"
+        >
+          Welcome user[insert username] or Guest
+        </h6>
+      </header>
 
 
 
-      <h1 class="title__words">Providing MDN <br><span>JavaScript</span> <br>
-        documentation</h1>
+        <article class="article bg-light  col-12  p-3">
+
+          <h1 class="d-none">USER DOCUMENTATION</h1>
+          <section class="col-12">
+            <header class="border p-3">
 
 
-    </section>
-    <div id="article-href-section"> </div>
+              <h2 >Introduction</h2>
+
+              <p>Hello! This guide will take show you how to use the system. It will detail sign up, login, sign out, adding a business, searching for a restaurant, adding a restaurant. </p>
+            </header>
 
 
-    <div class="nav-article-container">
+          </section>
 
 
-      <nav class="nav-bar-left">
-        <div>
+        <div class=" col-12 d-flex flex-row flex-wrap">
+          <section class="col-12 col-lg-6 d-flex align-items-left flex-column border p-3">
+            <header>
+
+              <h2>To login:</h2>
+            </header>
 
 
-          <a class="nav-bar-left__title" href="#JS_documentation">
-            JS documentation </a>
-          <button class="button-main-control button-main-control--close" autofocus><i id="navbar__cross"
-              class="fas fa-times"></i></button>
-          <button class="button-main-control button-main-control--open"><i class="fas fa-bars"></i></button>
+            <ul>
+              <li>Go to the top navigation of the page </li>
+
+              <li>Click on account actions  </li>
+
+              <li>Click on Login </li>
+
+              <li>Enter your username between 1 and 20 characters</li>
+
+              <li>Enter your password in a text box between 1 and 20 characters </li>
+
+              <li>Enter your password in a text box between 1 and 20 characters </li>
 
 
+              <li>Press submit. If successful, the pop will tell you </li>
+
+
+
+            </ul>
+
+            <img  src="src/assets/account-actions-login.png" alt ="account actions when signed out - login highlighted" />
+            <img class=" mt-3" alt ="login box" src="src/assets/login.png" />
+          </section>
+
+          <section class="col-12 col-lg-6 d-flex align-items-left flex-column border p-3">
+          <header>
+
+          <h2>To Sign up:</h2>
+          </header>
+
+
+            <ul>
+            <li>Go to the top navigation of the page </li>
+
+            <li>Click on account actions  </li>
+
+            <li>Click on Sign up </li>
+
+            <li>Enter your username between 1 and 20 characters</li>
+
+            <li>Enter your password in a text box between 1 and 20 characters </li>
+
+            <li>Press submit. If successful, the pop will tell you </li>
+
+
+
+          </ul>
+
+          <img  src="src/assets/account-actions-sign-up.png" alt ="account actions when signed out - signup button highlighted" />
+          <img class=" mt-3" alt ="login box" src="src/assets/signup.png" />
+        </section>
+
+
+
+          <section class="col-12 col-lg-6 d-flex align-items-left flex-column border p-3">
+          <header>
+
+            <h2>To sign out:</h2>
+            </header>
+
+
+            <ul>
+            <li>Go to the top navigation of the page </li>
+
+            <li>Click on account actions  </li>
+
+            <li>Click on sign out </li>
+
+            <li>Press submit. If successful, the login pop up should show</li>
+
+          </ul>
+
+            <img  src="src/assets/account-actions-signout.png" alt ="account actions when signed out - sign out button highlighted" />
+
+          </section>
+
+        <section class="col-12 col-lg-6 d-flex align-items-left flex-column border p-3">
+          <header>
+
+          <h2>To add a business:</h2>
+            </header>
+
+          <ul>
+            <li>Go to the top navigation of the page </li>
+
+            <li>Click on account actions  </li>
+
+            <li>Click on add a business </li>
+
+            <li>Enter your business / restaurant name between 1 and 32 characters</li>
+
+            <li>Enter your password in a text box</li>
+
+            <li>Press submit. If successful, the pop will tell you </li>
+
+          </ul>
+
+          <img  src="src/assets/account-actions-business.png" alt ="account actions when signed out - login highlighted" />
+          <img class=" mt-3" alt ="restaurant box" src="src/assets/restaurant.png"/>
+
+        </section>
 
         </div>
 
-        <a class="nav-bar-left__nav-link" href="#Introduction">
-          Introduction
-        </a>
-
-        <a class="nav-bar-left__nav-link  " href="#JavaScript_and_Java">
-          JavaScript and Java
-        </a>
-
-        <a class="nav-bar-left__nav-link " href="#Hello_world">
-          Hello world
-        </a>
-
-        <a class="nav-bar-left__nav-link" href="#Variables">
-          Variables
-        </a>
-        <a class="nav-bar-left__nav-link " href="#Declaring_variables">
-          Declaring variables
-        </a> <a class="nav-bar-left__nav-link " href="#Variable_scope">
-          Variable scope
-        </a>
-        <a class="nav-bar-left__nav-link " href="#Global_variables">
-          Global variables
-        </a>
-        <a class="nav-bar-left__nav-link " href="#Constants">
-          Constants
-        </a>
-        <a class="nav-bar-left__nav-link " href="#If..else_statement">
-          If..else statement
-        </a>
-        <a class="nav-bar-left__nav-link " href="#While_statement">
-          While statement
-        </a>
-        <a class="nav-bar-left__nav-link " href="#Function_Declarations">
-          Function Declarations
-        </a>
-        <a class="nav-bar-left__nav-link " href="#Reference">
-          Reference
-        </a>
-
-
-
-      </nav>
-
-
-
-        <article class="article">
-        <header>
-          <h2>The Documentation</h2>
-        </header>
-
-
-        <section id="Introduction">
-          <header>
-            <h2>Introduction</h2>
-          </header>
-
-          <p>JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language.
-            Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its
-            environment to provide programmatic control over them.</p>
-
-          <p>JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of
-            language elements such as operators, control structures, and statements. Core JavaScript can be extended for
-            a variety of purposes by supplementing it with additional objects; for example:</p>
-
-          <p>Client-side JavaScript extends the core language by supplying objects to control a browser and its Document
-            Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML
-            form and respond to user events such as mouse clicks, form input, and page navigation.
-            Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a
-            server. For example, server-side extensions allow an application to communicate with a database, provide
-            continuity of information from one invocation to another of the application, or perform file manipulations
-            on a server.</p>
-
-        </section>
-
-        <section id="JavaScript_and_Java">
-          <header>
-            <h2> JavaScript and Java</h2>
-          </header>
-          <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript
-            language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows
-            most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why
-            it was renamed from LiveScript to JavaScript.</p>
-
-          <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime
-            system based on a small number of data types representing numeric, Boolean, and string values. JavaScript
-            has a prototype-based object model instead of the more common class-based object model. The prototype-based
-            model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript
-            also supports functions without any special declarative requirements. Functions can be properties of
-            objects, executing as loosely typed methods.</p>
-
-          <p> JavaScript is a very free-form language compared to Java. You do not have to declare all variables,
-            classes, and methods. You do not have to be concerned with whether methods are public, private, or
-            protected, and you do not have to implement interfaces. Variables, parameters, and function return types are
-            not explicitly typed</p>
-        </section>
-        <section id="Hello_world">
-          <header>
-            <h2>Hello world</h2>
-          </header>
-          <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript
-            code: </p>
-
-          <code>function greetMe(yourName) { alert("Hello " + yourName); }   greetMe("World");</code>
-
-          <p>Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!
-          </p>
-        </section>
-        <section id="Variables">
-          <header>
-            <h2>Variables</h2>
-          </header>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-
-          <code>function greetMe(yourName) { alert("Hello " + yourName); }  greetMe("World");</code>
-        </section>
-
-        <section id="Declaring_variables">
-          <header>
-
-            <h2>Declaring variables</h2>
-
-          </header>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-        </section>
-
-        <section id="Variable_scope">
-          <header>
-            <h2>Variable scope</h2>
-          </header>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-        </section>
-
-
-        <section id="Global_variables">
-          <header>
-            <h2>Global variables</h2>
-          </header>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-
-          <code>function greetMe(yourName) { alert("Hello " + yourName); }
-              greetMe("World");</code>
-        </section>
-        <section id="Constants">
-          <header>
-            <h2>Constants</h2>
-          </header>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-        </section>
-
-        <section id="If..else_statement">
-          <header>
-            <h2>If..else statement</h2>
-          </header>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <code> console.log("hello-world!!");</code>
-
-          <ol class="list-style">
-            <li>Point A</li>
-
-            <li>Point B </li>
-
-            <li>Point C </li>
-
-          </ol>
-        </section>
-
-        <section id="While_statement">
-          <header>
-            <h2>While statement</h2>
-          </header>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-        </section>
-
-        <section id="Function_Declarations">
-          <header>
-            <h2>Function Declarations</h2>
-          </header>
-
-          <ul>
-            <li>Point A </li>
-
-            <li>Point B </li>
-
-            <li>Point C </li>
-
-          </ul>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam rhoncus nisl pharetra tempus sollicitudin.
-            Vestibulum ultrices
-            imperdiet condimentum. Cras efficitur, nunc ut mattis lacinia, libero nulla venenatis justo,
-            vel aliquet mi ligula vel ipsum. In facilisis nulla at ligula dignissim pretium. Phasellus lacinia semper
-            justo, et varius justo interdum quis. Nam maximus dui ut fringilla volutpat. Donec ut ipsum diam. Proin
-            condimentum
-            ac lorem sed tincidunt.Cras id tempus eros. Suspendisse vestibulum id nisl sit amet congue. Nulla sed est
-            vel felis rhoncus
-            laoreet. Aliquam erat volutpat.Duis viverra malesuada elit lobortis egestas. Suspendisse potenti.</p>
-
-        </section>
-        
-     
       </article>
 
-git 
+
     </div>
 
+  </main>
+</div>
 
-</main>
 
 
-  <script src="script.js"></script>
+<!-- Sign up template -->
+<div class="modal" id="sign-up_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <div class="modal-header">
+
+        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
+        </button>
+        <h5 class="modal-title">Sign up</h5>
+
+      </div>
+      <div class="modal-body col-12 d-flex flex-column ">
+
+        <form class="w-100 d-flex flex-column align-items-center">
+          <label for="username-sign-up" class="d-none m-1">Enter username into text box</label>
+          <input id="username-sign-up"  class="w-100 m-1 rounded-1" name="username" type="text"   placeholder="Username"  required minlength="1" maxlength="20"  title="username must be 20 characters" >
+
+          <label for="password-1-sign-up" class="d-none m-1">Enter password into a text box</label>
+          <input id="password-1-sign-up" class="w-100 m-1 rounded-1" name="password" type="password"    placeholder="Enter password"  required minlength="1" maxlength="20" title="password must be between 1 and 20 characters" >
+
+          <label for="password-2-sign-up" class="d-none m-1">Renter password into a text box</label>
+          <input id="password-2-sign-up" class="w-100 m-1 rounded-1"  type="password" placeholder="Enter password"  required minlength="1" maxlength="20" title="username must be between 1 and 20 characters and match first password entry" >
+
+          <button id="submit-sign-up" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="button">Submit</button>
+
+        </form>
+        <div class="alert alert-warning d-none" aria-label="warning alert" role="alert">
+          Are you sure you want to create an account?
+          <button type="button" class="btn btn-dark">Yes</button>
+          <button type="button" class="btn btn-dark">No</button>
+
+
+        </div>
+        <div class="alert alert-success d-none" role="alert" aria-label="successful creation of account" aria-hidden="true">
+          Success: You have created an account
+        </div>
+
+        <div class="alert alert-danger d-none" role="alert" aria-label="error alert"  aria-hidden="true">
+          Error: the account already exists
+        </div>
+      </div>
+
+      <div class="modal-footer" >
+        Have an account? Login instead
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+<!-- Login template -->
+<div class="modal" id="Login_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <button type="button" class="btn btn-dark text-light " data-bs-dismiss="modal">Close
+        </button>
+        <h5 class="modal-title">Login</h5>
+
+      </div>
+
+      <div class="modal-body col-12 d-flex flex-column ">
+
+        <form class="w-100 d-flex flex-column align-items-center">
+          <label for="username-login" class="d-none m-1">Enter username into text box</label>
+          <input id="username-login"  class="w-100 m-1 rounded-1" name="username" type="text" placeholder="Username"  required minlength="1" maxlength="20" />
+
+          <label for="password-login" class="d-none m-1">Enter password into text box</label>
+          <input id="password-login" class="w-100 m-1 rounded-1" name="password"  type="password"  placeholder="Password"  required minlength="1" maxlength="20" />
+
+          <button id="submit-login" class="btn btn-dark rounded-0 w-100 m-1 btn-success" type="button">Submit</button>
+
+
+        </form>
+        <div class="alert alert-danger w-100 d-none"  role="alert" aria-label="Login information incorrect">
+          Error: Login username/password not correct - try to login again
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        Don't have an account?  Sign up instead!
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+<!-- Add business template -->
+<div class="modal" id="add-business_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+                type="button"
+                class="btn btn-dark text-light"
+                data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <h5 class="modal-title">Add a business</h5>
+      </div>
+
+      <div class="modal-body col-12 d-flex flex-column">
+        <form class="w-100 d-flex flex-column align-items-center">
+          <label for="create-add-business" class="d-none m-1"
+          >Enter restaurant name into text box</label
+          >
+          <input
+                  id="create-add-business"
+                  class="w-100 m-1 rounded-1"
+                  name="restaurant-input"
+                  type="text"
+                  placeholder="restaurant name"
+                  required
+                  minlength="1"
+                  maxlength="300"
+          />
+
+          <button
+                  id="submit-create-add-business"
+                  class="btn btn-dark rounded-1 w-100 m-1 btn-success"
+                  type="button"
+          >
+            Submit
+          </button>
+        </form>
+
+        <div
+                class="alert alert-warning d-none"
+                aria-label="warning alert"
+                role="alert"
+                aria-hidden="true"
+        >
+          Are you sure you want to add a new business?
+          <button type="button" class="btn btn-dark">Yes</button>
+          <button type="button" class="btn btn-dark">No</button>
+        </div>
+
+        <div
+                class="alert alert-success d-none"
+                aria-label="success alert"
+                role="alert"
+                aria-hidden="true"
+        >
+          Success: You have added a new business to review.
+        </div>
+
+        <div
+                class="alert alert-faliure d-none"
+                aria-label="error alert"
+                role="alert"
+                aria-hidden="true"
+        >
+          Error: Business name wasn't added because it already exists.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="src/js/jscript.js"></script>
 
 </body>
-
-
 </html>
