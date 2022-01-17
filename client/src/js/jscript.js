@@ -1,6 +1,15 @@
 $(function () {
   //allow for an application to send
 getLoginState();
+
+$("#sign-up_modal button:first").click(reset("#sign-up_modal"));
+
+  $("#Login_modal button:first").click(reset("#Login_modal"));
+
+  $("#add-business_modal button:first").click(reset("#add-business_modal"));
+
+  removeFormDefault();
+
 $( ".dropdown-menu button[data-bs-target='#Login_modal']:contains('Sign out')" ).click(function(){
  sessionStorage.removeItem("loggedInRRS") ;
   headerSignoutState();
@@ -53,6 +62,9 @@ function headerSignoutState(){
 
 
 
+
+
+
 function removeFormDefault () {
     $("form").click( function(e){ e.preventDefault()});
     return false;
@@ -68,10 +80,6 @@ function removeFormDefault () {
 $(".dropdown-menu button:contains('Sign out')" ).click(function () { sessionStorage.clear()  } );
 
 
-  document.querySelector( "#Login_modal button").addEventListener("click",
-        function(){ reset("#Login_modal")});
-
-
 
 
 
@@ -82,14 +90,16 @@ function reset(modal){
 
 
 
-
+return function(){
  let inputs = document.querySelectorAll(modal + " input" );
 
- console.log(inputs);
-
  for( let i = 0; i < inputs.length; i++){
-   inputs[i].value = "";
+
+   inputs[i].value = '';
+
  }
+
+}
 
 
 
@@ -101,12 +111,11 @@ function reset(modal){
  $("#submit-sign-up").click(function (e) {
 
 
-   let passwordFirstEntry = document.getElementById("password-1-sign-up").value;
-   let passwordSecondEntry = document.getElementById("password-2-sign-up").value;
+   let passwordFirstEntry = document.getElementById("password-1-sign-up").value + "";
+   let passwordSecondEntry = document.getElementById("password-2-sign-up").value + "";
 
-    let usernameEntry = document.getElementById("username-sign-up").value;
+    let usernameEntry = document.getElementById("username-sign-up").value + "";
 
-    let isSuccessful = false;
 
   if (usernameEntry == " " || usernameEntry == ""){
 
@@ -125,16 +134,26 @@ function reset(modal){
     $( "#sign-up_modal .alert-danger:first" ).addClass("d-none");
     ajaxTemplate("#sign-up_modal", "user/", "POST", sign_up, "Success: You have created an account");
 
+    $( "#sign-up_modal .alert-danger" ).text("Error: account already exists");
+
 
     $( "#sign-up_modal .alert-danger" ).removeClass("d-none");
-    $( "#sign-up_modal .alert-danger" ).text("Error: password must be at least one character");
 
 
 
 
 
    }
-   // if second entry of password doesn't equal first
+
+    else if(passwordFirstEntry == " " || passwordFirstEntry == ""  ){
+
+
+      $( "#sign-up_modal .alert-danger" ).removeClass("d-none");
+
+          $( "#sign-up_modal .alert-danger" ).text("Error: password must be at least one character");
+
+      }
+ // if second entry of password doesn't equal first
    else if(passwordFirstEntry != passwordSecondEntry){
 
 
@@ -146,43 +165,53 @@ function reset(modal){
 
 
 
-        reset("#sign-up_modal");
+
 
 
         });
 //when signup button is pressed it creates an account username and password
- $("#submit-login").click(function (e) {
+ $("#submit-login").click(function () {
 
-    let passwordFirstEntry = document.getElementById("password-login").value;
+    let passwordFirstEntry = document.getElementById("password-login").value + "";
 
-    let usernameEntry = document.getElementById("username-login").value;
-
+    let usernameEntry = document.getElementById("username-login").value + "";
 
     let login = {username: usernameEntry, password: passwordFirstEntry};
 
 
-
+    console.log(usernameEntry);
 
     if (usernameEntry == " " || usernameEntry == ""){
 
 
+      $( "#Login_modal .alert-danger" ).text("Error: username must be at least one character");
 
-      $( "#login_modal .alert-danger" ).removeClass("d-none");
-      $( "#login_modal .alert-danger" ).text("Error: username must be at least one character");
-      reset("#login_modal" );
+      $( "#Login_modal .alert-danger" ).removeClass("d-none");
+
+
 
   }
-  else
+
+  else if (passwordFirstEntry == " " || passwordFirstEntry == ""){
+
+
+
+             $( "#Login_modal .alert-danger" ).text("Error: username and/or password is incorrect");
+
+                          $( "#Login_modal .alert-danger" ).removeClass("d-none");
+
+
+
+
+         }
+  else if(usernameEntry != "" && usernameEntry != " "  && passwordFirstEntry != "" && passwordFirstEntry != " ")
  {
-    ajaxTemplate("#login_modal", "auth/", "POST", login, "Success: you are logged in","Error: Username and/or password is incorrect");
-    reset("#login_modal" );
+    ajaxTemplate("#Login_modal", "auth/", "POST", login, "Success: you are logged in","Error: username and/or password is incorrect");
 
 
    }
 
-   document.getElementById("password-login").value = "";
 
-    document.getElementById("username-login").value = "";
  });
 
  $("#submit-create-add-business").click(function (e) {
@@ -227,7 +256,51 @@ function reset(modal){
 
        }
 
-                  reset("#add-business_modal" );
+
+ });
+
+ $("#submit-create-add-business").click(function (e) {
+
+    let businessEntry = document.getElementById("create-add-business").value + "";
+    let iD = getID()  + "";
+
+
+    let business = {id: iD, name : businessEntry};
+
+
+
+
+    if (businessEntry == " " || businessEntry == ""  ){
+
+              alert("business must have a name")
+
+
+          $( "#add-business_modal .alert-danger" ).removeClass("d-none");
+              $( "#add-business_modal .alert-danger" ).text("Error: restaurant name must be at least one character");
+
+
+       }
+       else
+       {
+                ajaxTemplate("#add-business_modal", "restaurant/", "GET", "", "Success: restaurant can be added","Error: restaurant name already in use");
+
+                let question = "Can you confirm you want to create a restaurant";
+
+                if(confirm(question)){
+
+                  ajaxTemplate("#add-business_modal", "restaurant/", "POST", business, "Success: you have added a new restaurant","");
+
+                }
+                else
+                {
+                  alert("action cancelled");
+                }
+
+
+
+
+       }
+
 
  });
 
@@ -272,6 +345,12 @@ return id;
           //key is logged in restaurant review system (RRS) key and  username is value)
           sessionStorage.setItem("loggedInRRS", userObject.username);
 
+
+         $('div[aria-label="Login information incorrect"]' ).addClass("d-none");
+
+         $('div[aria-label="Login information incorrect"]' ).attr("aria-label","Correct login");
+
+
           headerLoginState();
 
 
@@ -283,7 +362,7 @@ return id;
 
                  alert(data);
 
-         headerLoginState();
+
 
       }
 
@@ -297,6 +376,13 @@ return id;
 
       $(modal + " .alert-danger" ).text(data.message);
 
+
+      $(modal + " .alert-success" ).addClass("d-none") ;
+
+
+
+
+
       }
       else if(mapping == "auth/" ){
 
@@ -308,7 +394,6 @@ return id;
 
        $('div[aria-label="Login information incorrect"]' ).removeClass("d-none");
 
-        reset(modal);
 
       }
       else if(mapping == "restaurant/"){
@@ -317,17 +402,13 @@ return id;
                  alert(successMsg);
 
 
-      }}})
+      }
+
+     reset(modal);
+}})
 
 
 
-close("#sign-up_modal");
-
-  close("#login_modal");
-
-  close("#add-business_modal");
-
-  removeFormDefault();
 
 
 }});
