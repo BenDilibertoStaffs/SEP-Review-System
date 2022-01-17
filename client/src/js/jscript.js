@@ -80,16 +80,14 @@ $(".dropdown-menu button:contains('Sign out')" ).click(function () { sessionStor
 //put the modal back into the original loading state - no error messages and clear fields
 function reset(modal){
 
- let inputs = "";
- console.log(inputs);
 
 
-  inputs = document.querySelectorAll(modal + " input" );
+
+ let inputs = document.querySelectorAll(modal + " input" );
 
  console.log(inputs);
 
  for( let i = 0; i < inputs.length; i++){
-   inputs[i].value = "";
    inputs[i].value = "";
  }
 
@@ -103,7 +101,10 @@ function reset(modal){
  $("#submit-sign-up").click(function (e) {
 
 
+   let passwordFirstEntry = document.getElementById("password-1-sign-up").value;
+   let passwordSecondEntry = document.getElementById("password-2-sign-up").value;
 
+    let usernameEntry = document.getElementById("username-sign-up").value;
 
     let isSuccessful = false;
 
@@ -124,11 +125,6 @@ function reset(modal){
     $( "#sign-up_modal .alert-danger:first" ).addClass("d-none");
     ajaxTemplate("#sign-up_modal", "user/", "POST", sign_up, "Success: You have created an account");
 
-
-    }
-//if no password is entered
-    else if(passwordFirstEntry === "" || passwordFirstEntry === " "){
-       reset("#sign-up_modal");
 
     $( "#sign-up_modal .alert-danger" ).removeClass("d-none");
     $( "#sign-up_modal .alert-danger" ).text("Error: password must be at least one character");
@@ -153,14 +149,13 @@ function reset(modal){
         reset("#sign-up_modal");
 
 
-
- });
+        });
 //when signup button is pressed it creates an account username and password
  $("#submit-login").click(function (e) {
 
-    let passwordFirstEntry = document.getElementById("password-login").value = "";
+    let passwordFirstEntry = document.getElementById("password-login").value;
 
-    let usernameEntry = document.getElementById("username-login").value = "";
+    let usernameEntry = document.getElementById("username-login").value;
 
 
     let login = {username: usernameEntry, password: passwordFirstEntry};
@@ -184,6 +179,10 @@ function reset(modal){
 
 
    }
+
+   document.getElementById("password-login").value = "";
+
+    document.getElementById("username-login").value = "";
  });
 
  $("#submit-create-add-business").click(function (e) {
