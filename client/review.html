@@ -10,7 +10,7 @@
     <script src="src/js/jquery-3.6.0.js"></script>
     <script src="src/js/bootstrap.bundle.js"></script>
   </head>
-  <body>
+  <body class="review-body">
     <div class="container-fluid" aria-label="Restaurant review system application" role="application">
         <header class="row">
             <!--  Main navigation with some accessibility -->
@@ -149,7 +149,7 @@
                             placeholder="Restaurant search name"
                             aria-label="Enter a restaurant name"
                     />
-                    <button class="btn btn-dark rounded-0 rounded-end" type="submit">
+                    <button class="btn btn-dark rounded-0 rounded-end" type="button">
                         Search
                     </button>
                 </form>
@@ -212,7 +212,7 @@
                         <h5 class="card-title d-inline">Create a Customer Review</h5>
 
 
-                        <button id="inner-search-section-button" class="mx-md-2 col-sm-4 col-12 btn btn-dark rounded-1 d-inline" type="button">Submit</button>
+                        <button id="inner-search-section-button" class="mx-md-2 col-sm-4 col-12 btn btn-dark rounded-1 d-inline" type="button"> Restaurant select</button>
 
                     </div>
                     <div class="card-body col-12">
@@ -226,8 +226,8 @@
 
                                 <div class="form-check mt-4 w-100 p-0">
                                     <!--  Search bar for finding restaurants -->
-                                    <form action="" method="POST" class="form-inline w-100  " aria-label="search by name section - maximum 32 characters including spaces" role="search">
-                                        <label for="inner-search-input" class="d-none">Restaurant search name (max 32 characters including spaces) </label>
+                                    <form action=""  class="form-inline w-100  " aria-label="search by name section - maximum 32 characters including spaces" role="search">
+                                        <label for="inner-search-input" class="d-none">Restaurant search name (max 34 characters including spaces) </label>
                                         <input
                                                 id="inner-search-input"
                                                 list="inner-search-list"
@@ -262,13 +262,13 @@
                 </form>
 
     </div>
- <div class="card col-md-9 mt-5 col-12">
+ <div class="card col-md-9 mt-5 col-12 d-none">
      <!-- search for restaurant component-->
 
     <form >
     <div class="card-header">
          <h5 class="card-title d-inline">Create a Customer Review</h5>
-       <button class="mx-md-2 col-sm-4 col-12 btn btn-dark rounded-1 d-inline" type="submit">Submit</button>
+       <button class="mx-md-2 col-sm-4 col-12 btn btn-dark rounded-1 d-inline" type="button">Submit</button>
 
      </div>    
     <div class="card-body">
@@ -569,7 +569,7 @@
     </div>
   </div>
 
-  
+
 </div>
    <!-- Add business template -->
    <div class="modal" id="add-business_modal">

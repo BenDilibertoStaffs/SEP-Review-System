@@ -10,6 +10,10 @@ $("#sign-up_modal button:first").click(reset("#sign-up_modal"));
 
   removeFormDefault();
 
+if(document.getElementsByClassName("review-body")[0]){
+getTemplate("#inner-search-section", "restaurant/", "", "Success: has updated the restaurants ","Error: restaurants aren't stored", true);
+}
+
 $( ".dropdown-menu button[data-bs-target='#Login_modal']:contains('Sign out')" ).click(function(){
  sessionStorage.removeItem("loggedInRRS") ;
   headerSignoutState();
@@ -100,10 +104,6 @@ return function(){
  }
 
 }
-
-
-
-
 
  }
 
@@ -259,51 +259,48 @@ return function(){
 
  });
 
- $("#submit-create-add-business").click(function (e) {
+ $("#inner-search-section-button").click(function (e) {
 
-    let businessEntry = document.getElementById("create-add-business").value + "";
-    let iD = getID()  + "";
-
-
-    let business = {id: iD, name : businessEntry};
+    let businessEntry = document.querySelector("#inner-search-section input").value + "";
 
 
+   restaurant("#inner-search-section", businessEntry,false);
 
+
+ });
+
+
+ $("#main-search + button").click(function (e) {
+
+     let businessEntry = document.querySelector("#main-search").value + "";
+
+
+    restaurant("#main-search", businessEntry, false  );
+
+
+  });
+
+
+function restaurant(modal, businessEntry, isOnLoad){
+
+    let business = { name : businessEntry};
 
     if (businessEntry == " " || businessEntry == ""  ){
 
               alert("business must have a name")
 
 
-          $( "#add-business_modal .alert-danger" ).removeClass("d-none");
-              $( "#add-business_modal .alert-danger" ).text("Error: restaurant name must be at least one character");
-
-
        }
        else
        {
-                ajaxTemplate("#add-business_modal", "restaurant/", "GET", "", "Success: restaurant can be added","Error: restaurant name already in use");
-
-                let question = "Can you confirm you want to create a restaurant";
-
-                if(confirm(question)){
-
-                  ajaxTemplate("#add-business_modal", "restaurant/", "POST", business, "Success: you have added a new restaurant","");
-
-                }
-                else
-                {
-                  alert("action cancelled");
-                }
+                getTemplate(modal, "restaurant/",business,  "Success: the system has that name","Error: name isn't stored",isOnLoad);
 
 
 
 
        }
 
-
- });
-
+}
 
 function getID(){
 let today = new Date;
@@ -312,6 +309,111 @@ return id;
 
 }
 
+
+
+//generic template for ajax get
+  function getTemplate(container,mapping, userObject, successMsg, errorMsg, isOnLoad) {
+    let json = JSON.stringify(userObject);
+
+
+     $.ajax({
+      url: "http://localhost:1234/api/" + mapping,
+      contentType: "application/json",
+      method: "GET",
+      dataType: "text",
+
+      success: function (data) {
+
+
+             let isFound = false;
+
+       if(mapping == "restaurant/" && isOnLoad){
+
+
+          data = JSON.parse(data);
+
+
+
+         let datalist = document.querySelector("#inner-search-section datalist");
+
+         for(let i = 0; i < data.length; i++){
+          let option =  document.createElement("option");
+
+            option.value = data[i].name;
+
+            datalist.appendChild(option);
+
+         }
+
+         alert("Data is found")
+
+
+       }
+       if(mapping == "restaurant/" && !isOnLoad){
+              data = JSON.parse(data);
+
+
+             let i = 0;
+                while(!isFound && i < data.length){
+
+
+               if(data[i].name === userObject.name){
+
+                alert(userObject.name + " is  found");
+
+
+                    isFound = true;
+                 }
+
+                 i++;
+
+           }
+
+           if(!isFound){
+             if(confirm(userObject.name + " is not found. Do you want to add it?")){
+                  ajaxTemplate("#inner-search-section", "restaurant/", "POST",{name: userObject.name, id: getID()}, "Success: you have added a new restaurant","Error: restaurant not added");
+
+            let datalist = document.querySelector( "#inner-search-section datalist");
+
+            let option =  document.createElement("option");
+
+            option.value = userObject.name ;
+
+            datalist.appendChild(option);
+
+
+
+             }
+
+           }
+           }
+
+
+
+
+      },
+
+
+
+      error: function (data) {
+
+
+
+       if(mapping == "restaurant/"){
+
+
+                 alert(successMsg);
+
+
+      }
+
+      }})
+
+
+
+
+
+};
 //generic template for ajax post, get
   function ajaxTemplate(modal,mapping, ajaxMethod, userObject, successMsg, errorMsg) {
     let json = JSON.stringify(userObject);
