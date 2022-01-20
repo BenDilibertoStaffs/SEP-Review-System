@@ -272,21 +272,41 @@ return function(){
 
  $("#inner-search-section-button").click(function (e) {
 
-    let businessEntry = document.querySelector("#inner-search-section input").value + "";
+ let businessEntry = document.querySelector("#inner-search-section input").value ;
 
 
-   restaurant("#inner-search-section", businessEntry,false);
+ let data =  restaurant("#inner-search-section", businessEntry,false);
 
+
+ if(data){
+
+  $("#form-customer-review").removeClass("d-none");
+
+
+
+}
 
  });
 
  $("#main-search + button").click(function (e) {
 
      let businessEntry = document.querySelector("#main-search").value;
+  alert(businessEntry);
+
+  let isRestaurantFound = restaurant("#main-search", businessEntry, false  );
+  alert("is isfound " + isRestaurantFound);
+   if(isRestaurantFound) {
 
 
-     restaurant("#main-search", businessEntry, false  );
+  let restaurantReviewId = $("#main-search").value();
+  let data = business("#form-restaurant-review-read-only", businessEntry, false, restaurantReviewId);
 
+  //window.location.href = './restaurant-search.html'
+
+ $("#main-search").value() = "";
+
+
+   }
 
   })
 
@@ -358,13 +378,12 @@ foodQualityChecked = parseInt(foodQualityChecked,10);
  alert("value for money " + valueForMoneyChecked);
   alert("cuisine collection " +  cuisineCollection[0]);
 
-  alert(restaurantReviewId);
-
  let anID = getID();
    let business = {id: anID, restaurantId: restaurantReviewId, cuisines: cuisineCollection, quality: foodQualityChecked, value: valueForMoneyChecked};
   e.preventDefault();
 
-   ajaxTemplate("", "review/", "POST", business, "Success: you have added a new review","error: review not added");
+ajaxTemplate("", "review/", "POST", business, "Success: you have added a new review","error: review not added");
+
 
 document.querySelector("#inner-search-input").value = "";
 
@@ -380,96 +399,14 @@ $(".card.col-md-9.mt-5.col-12").addClass("d-none");
    });
 
 
- $("#form-customer-review button:first").click(function (e) {
 
- let isFound = false;
-let cuisineInputs  = $("input[name='cuisines']") ;
-   let cuisineCollection = [];
-
-      for(let i = 0 ; i < cuisineInputs.length; i++){
+function business(modal, businessEntry, isOnLoad, restaurantReviewId){
 
 
-         if(cuisineInputs[i].checked){
 
+      getTemplate(modal, "review/", businessEntry,  "Success: the system has that restaurant review","Error: the system does not have a review for restaurant",isOnLoad);
 
-              isFound = true;
-              cuisineCollection.push(cuisineInputs[i].value);
-         }
-
-      }
-      if(!isFound){
-      cuisineCollection = null;
-      }
-isFound = false;
-let valueForMoney  = $("input[name='value-for-money']") ;
-let valueForMoneyChecked = "";
-let i = 0;
-      do{
-
-               if(valueForMoney[i].checked){
-
-                  valueForMoneyChecked = valueForMoney[i].value;
-                  idFound = true;
-
-               }
-
-            i++;
-
-        }
-       while(!isFound && (i < valueForMoney.length))
-
- isFound = false;
-
-    let foodQualityInputs  = $("input[name='food-quality']") ;
-     foodQualityChecked = "";
-    let j = 0;
-          do{
-
-
-                   if(foodQualityInputs[j].checked){
-
-                      foodQualityChecked = foodQualityInputs[j].value;
-                      isFound = true;
-
-                   }
-                   j++;
-            }
-           while(!isFound && (j < foodQualityInputs.length))
-
- isFound = false;
-
-// if at least one cuisine option is checked
- if(cuisineCollection){
-let restaurantReviewId =  document.querySelector("#inner-search-input").value;
-
-foodQualityChecked = parseInt(foodQualityChecked,10);
- valueForMoneyChecked = parseInt(valueForMoneyChecked,10);
-  alert("food quality " + foodQualityChecked);
- alert("value for money " + valueForMoneyChecked);
-  alert("cuisine collection " +  cuisineCollection[0]);
-
-  alert(restaurantReviewId);
-
- let anID = getID();
-   let business = {id: anID, restaurantId: restaurantReviewId, cuisines: cuisineCollection, quality: foodQualityChecked, value: valueForMoneyChecked};
-  e.preventDefault();
-
-   ajaxTemplate("", "review/", "POST", business, "Success: you have added a new review","error: review not added");
-
-document.querySelector("#inner-search-input").value = "";
-
-$(".card.col-md-9.mt-5.col-12").addClass("d-none");
-   }
-
-   else{
-   alert("At least one cuisine must be picked");
-
-
-   }
-
-   });
-
-
+}
 
 function restaurant(modal, businessEntry, isOnLoad){
 
@@ -477,16 +414,14 @@ function restaurant(modal, businessEntry, isOnLoad){
 
     if (businessEntry == " " || businessEntry == ""  ){
 
-              alert("business must have a name")
-
+              alert("business must have a name");
 
        }
        else
        {
-                getTemplate(modal, "restaurant/",business,  "Success: the system has that name","Error: name isn't stored",isOnLoad);
+             let answer =   getTemplate(modal, "restaurant/",business,  "Success: the system has that name","Error: name isn't stored",isOnLoad);
 
-
-
+             return answer;
 
        }
 
@@ -517,11 +452,10 @@ return id;
       success: function (data) {
 
 
-             let isFound = false;
 
 
 
-let restaurantReviewId = "";
+        let restaurantReviewId = "";
         if(mapping == "restaurant/" && isOnLoad){
 
 
@@ -543,36 +477,49 @@ let restaurantReviewId = "";
          }
 
 
-       }
+
+
+
+
+
+          }
+
        if(mapping == "restaurant/" && !isOnLoad){
               data = JSON.parse(data);
 
+        let isFound = false;
+
+
+
+
 
              let i = 0;
-                while(!isFound && i < data.length){
 
-
-               if(data[i].name === userObject.name){
+           while(!isFound && i < data.length){
+               if(data[i].name == userObject.name){
 
                 alert(userObject.name + " is found" );
 
-                   if(container === "#inner-search-section")
                       document.querySelector("#inner-search-input").value =  data[i].id;
 
                     isFound = true;
 
-                 }
 
-                 i++;
 
-           }
+
+
+                }
+
+                i++;
+
+             }
 
            if(!isFound){
              if(confirm(userObject.name + " is not found. Do you want to add it?")){
             if(container === "#inner-search-section"){
               let restaurantReviewId = getID();
              }
-             ajaxTemplate("#inner-search-section", "restaurant/", "POST",{name: userObject.name, id: restaurantReviewId}, "Success: you have added a new restaurant","Error: restaurant not added");
+             ajaxTemplate("#inner-search-section", "restaurant/", "POST", {name: userObject.name, id: restaurantReviewId}, "Success: you have added a new restaurant","Error: restaurant not added");
 
             let datalist = document.querySelector( "#inner-search-section datalist");
 
@@ -587,10 +534,12 @@ let restaurantReviewId = "";
 
             idFound = true;
 
-             document.querySelector("#inner-search-input").value =  data[i].id;
+             document.querySelector("#inner-search-input").value =  data.id;
 
 
 
+                $( "#inner-search-section").addClass("d-none");
+              $( "#form-customer-review-section").removeClass("d-none");
 
 
 
@@ -602,24 +551,13 @@ let restaurantReviewId = "";
 
              if(isFound){
 
-             if(container == "#inner-search-section" ){
+
+             document.querySelector("#inner-search-input").value =  data.id;
 
 
+                $( "#inner-search-section").addClass("d-none");
+              $( "#form-customer-review-section").removeClass("d-none");
 
-                $( "div.card.d-none").addClass("see-class");
-               $( "div.card.d-none").removeClass("d-none");
-
-              $( "#inner-search-section").addClass("d-none");
-
-
-
-
-
-
-                }
-
-               }
-             }
 
 
 
@@ -627,29 +565,43 @@ let restaurantReviewId = "";
 
 
 
-      },
+               }
+
+
+           return isFound;
+
+
+
+             }},
+
+
+
+
+
 
 
 
       error: function (data) {
 
-
-
        if(mapping == "restaurant/"){
 
 
-                 alert(successMsg);
+                 alert(errorMessage);
+
+                 return false;
 
 
       }
 
-      }})
+      else {
 
+        alert(data);
 
+       return data;
 
+      }
 
-
-};
+      }})};
 //generic template for ajax post, get
   function ajaxTemplate(modal,mapping, ajaxMethod, userObject, successMsg, errorMsg) {
     let json = JSON.stringify(userObject);
@@ -680,6 +632,8 @@ let restaurantReviewId = "";
 
            alert(successMsg);
 
+           return data;
+
          }
 
       else if(mapping == "auth/" ){
@@ -705,9 +659,9 @@ let restaurantReviewId = "";
       }
       else if(mapping == "restaurant/"){
 
-                 alert(data);
 
 
+              return data;
 
       }
 
@@ -733,7 +687,9 @@ let restaurantReviewId = "";
 
         else if(mapping == "review/"){
 
-           alert("errorMsg");
+           alert(errorMsg);
+
+           return null;
 
          }
       else if(mapping == "auth/" ){
@@ -751,16 +707,20 @@ let restaurantReviewId = "";
       else if(mapping == "restaurant/"){
 
 
-                 alert(successMsg);
+                 alert(errorMsg );
+
+                 return false;
 
 
       }
 
      reset(modal);
-}})
+}
+
+      })};
 
 
 
 
+});
 
-}});

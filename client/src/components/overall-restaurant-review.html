@@ -199,14 +199,14 @@
             Create and read reviews
           </p>
         </div>
-      <!-- form component for creating a overall restaurant review  -->
+      <!-- form component for creating an overall restaurant review  -->
 
-        <div class="card col-8 mt-5">
+        <div  id = "card-restaurant-review-read-only" class="card col-8 mt-5">
           
-          <form >
+          <form id = "form-restaurant-review-read-only">
           <div class="card-header">
                <h5 class="card-title d-inline">Review for [insert restaurant name]</h5>
-             <button class="mx-md-2 col-sm-4 col-12 btn btn-dark rounded-1 d-inline" type="submit">Submit</button>
+             <button class="mx-md-2 col-sm-4 col-12 btn btn-dark rounded-1 d-inline" type="buton">Submit</button>
 
            </div>    
           <div class="card-body">
@@ -222,12 +222,12 @@
                 class="form-check-input"
                 type="checkbox"
                 value="american"
-                id="american-checkbox"
+                id="american-checkbox-read-only"
                 name="cuisines"
                 checked
               />
 
-              <label class="form-check-label" for="american-checkbox" default>
+              <label class="form-check-label" for="american-checkbox-read-only" default>
                 American
               </label>
             </div>  
@@ -237,11 +237,11 @@
                 class="form-check-input"
                 type="checkbox"
                 value="Asian"
-                id="asian-checkbox"
+                id="asian-checkbox-read-only"
                 name="cuisines"
 
               />
-              <label class="form-check-label" for="asian-checkbox">
+              <label class="form-check-label" for="asian-checkbox-read-only">
                 Asian
               </label>
 
@@ -253,11 +253,11 @@
                 class="form-check-input"
                 type="checkbox"
                 value="Caribbean"
-                id="caribbean-checkbox"
+                id="caribbean-checkbox-read-only"
                 name="cuisines"
 
               />
-              <label class="form-check-label" for="caribbean-checkbox">
+              <label class="form-check-label" for="caribbean-checkbox-read-only">
                 Caribbean
               </label>
 
@@ -271,11 +271,11 @@
                 class="form-check-input"
                 type="checkbox"
                 value="Italian"
-                id="italian-checkbox"
+                id="italian-checkbox-read-only"
                 name="cuisines"
 
               />
-              <label class="form-check-label" for="italian-checkbox">
+              <label class="form-check-label" for="italian-checkbox-read-only">
                 Italian
               </label>
 
@@ -288,11 +288,11 @@
                 class="form-check-input"
                 type="checkbox"
                 value="Traditional"
-                id="traditional-checkbox"
+                id="traditional-checkbox-read-only"
                 name="cuisines"
 
               />
-              <label class="form-check-label" for="traditional-checkbox">
+              <label class="form-check-label" for="traditional-checkbox-read-only">
                 Traditional
               </label>
 
@@ -303,11 +303,11 @@
                 class="form-check-input"
                 type="checkbox"
                 value="Oriental"
-                id="oriental-checkbox"
+                id="oriental-checkbox-read-only"
                 name="cuisines"
 
               />
-              <label class="form-check-label" for="oriental-checkbox">
+              <label class="form-check-label" for="oriental-checkbox-read-only">
                 Oriental
               </label>
 
@@ -321,38 +321,38 @@
 
              
               <div class="form-check mt-4">
-                <input class="form-check-input" type="radio" name="value-for-money" id="value-for-money-1" value="1" checked>
-                <label class="form-check-label" for="value-for-money-1">
+                <input class="form-check-input" type="radio" name="value-for-money" id="value-for-money-1-read-only" value="1" >
+                <label class="form-check-label" for="value-for-money-1-read-only">
                    terrible
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-2" value="2" >
-                <label class="form-check-label" for="value-for-money-2">
+                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-2-read-only" value="2" >
+                <label class="form-check-label" for="value-for-money-2-read-only">
                     poor
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-3" value="3" >
-                <label class="form-check-label" for="value-for-money-3">
+                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-3-read-only" value="3" >
+                <label class="form-check-label" for="value-for-money-3-read-only">
                   average
                 </label>
               </div>
 
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-4" value="4" >
-                <label class="form-check-label" for="value-for-money-4">
+                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-4-read-only" value="4" >
+                <label class="form-check-label" for="value-for-money-4-read-only">
                very good
                 </label>
               </div>
 
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-5" value="5" >
-                <label class="form-check-label" for="value-for-money-5">
+                <input class="form-check-input" type="radio" name="value-for-money"  id="value-for-money-5-read-only" value="5" >
+                <label class="form-check-label" for="value-for-money-5-read-only">
                     excellent
                 </label>
               </div>
@@ -363,38 +363,38 @@
 
              
               <div class="form-check mt-4">
-                <input class="form-check-input " type="radio"  id="food-quality-1" value="1" name="food-quality" checked>
-                <label class="form-check-label" for="food-quality-1">
+                <input class="form-check-input " type="radio"  id="food-quality-1-read-only" value="1" name="food-quality" checked>
+                <label class="form-check-label" for="food-quality-1-read-only">
                    terrible
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="radio"  id="food-quality-2" value="2" name="food-quality" >
-                <label class="form-check-label" for="food-quality-2">
+                <input class="form-check-input" type="radio"  id="food-quality-2-read-only" value="2" name="food-quality" >
+                <label class="form-check-label" for="food-quality-2-read-only">
                     poor
                 </label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="radio"  id="food-quality-3" value="3" name="food-quality">
-                <label class="form-check-label" for="food-quality-3" >
+                <input class="form-check-input" type="radio"  id="food-quality-3-read-only" value="3" name="food-quality">
+                <label class="form-check-label" for="food-quality-3-read-only" >
                   average
                 </label>
               </div>
 
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" id="food-quality-4" value="4" name="food-quality">
-                <label class="form-check-label" for="food-quality-4" >
+                <input class="form-check-input" type="radio" id="food-quality-4-read-only" value="4" name="food-quality">
+                <label class="form-check-label" for="food-quality-4-read-only" >
                very good
                 </label>
               </div>
 
 
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="food-quality" id="food-quality-5" value="5"  >
-                <label class="form-check-label" for="food-quality-5" >
+                <input class="form-check-input" type="radio" name="food-quality" id="food-quality-5-read-only" value="5"  >
+                <label class="form-check-label" for="food-quality-5-read-only" >
                     excellent
                 </label>
               </div>
